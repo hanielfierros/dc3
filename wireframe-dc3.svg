@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-label="Wireframe DC-3">
+  <g fill="none" stroke="#1686c9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M80 150 L120 130 L400 120 L500 110 L620 118 L760 130 L840 140 L820 155 L760 160 L620 160 L500 150 L400 150 L120 160 L80 150 Z"/>
+    <path d="M120 130 L110 150 L80 150"/>
+    <path d="M400 120 L420 100 L560 100 L580 118"/>
+    <path d="M120 160 L100 200 L80 210"/>
+    <path d="M700 160 L720 210 L760 220"/>
+    <path d="M620 118 L640 96 L760 96 L780 130"/>
+    <line x1="180" y1="125" x2="180" y2="155"/>
+    <line x1="240" y1="123" x2="240" y2="155"/>
+    <line x1="300" y1="122" x2="300" y2="155"/>
+    <circle cx="560" cy="104" r="22"/>
+    <path d="M700 96 L700 104 L760 104"/>
+  </g>
+  <text x="450" y="260" fill="#5a6b7b" font-family="sans-serif" font-size="14" text-anchor="middle">DC-3 — perfil de referencia (línea; no a escala)</text>
+</svg>

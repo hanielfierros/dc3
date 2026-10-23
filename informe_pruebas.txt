@@ -1,0 +1,25 @@
+Informe de pruebas - Plataforma AATD DC3
+Fecha: 2026-10-23T09:49:06.867522
+======================================================================
+
+  [OK]   Estructura plana (sin subcarpetas) - subcarpetas: []
+  [OK]   Archivos requeridos - faltantes: []
+  [OK]   datos.json válido y con claves - equipos=7 riesgos=79 biblioteca=7
+  [OK]   datos.js define window.DATOS
+  [OK]   Referencias de index.html resueltas - rotas: []
+  [OK]   Anclas de navegación válidas - sin sección: []
+  [OK]   Secciones data-seccion existentes - faltantes: []
+  [OK]   SVG wireframe-dc3.svg legible
+  [OK]   SVG panel-kingair90.svg legible
+  [OK]   SVG diagrama_arquitectura.svg legible
+  [OK]   Archivos de biblioteca disponibles existen - faltantes: []
+  [OK]   Sin IDs duplicados de órdenes de trabajo - duplicados: []
+  [OK]   PDF Plan Maestro con firma válida - firma: b'%PDF-'
+  [OK]   Codificación UTF-8 sin BOM ni mojibake - afectados: []
+  [OK]   Manuales de equipo copiados (7)
+  [OK]   PDF de órdenes de trabajo existentes (239 nodos OI) - faltantes: 0
+  [OK]   Archivos de descarga existentes (10) - faltantes: []
+  [OK]   Cronograma con 5+ categorías de complejidad - categorías: 5
+  [OK]   Todas las OI tienen fecha y complejidad asignada - sin asignación: 0
+
+RESULTADO: 19 verificaciones, 19 OK, 0 errores -> CONFORME

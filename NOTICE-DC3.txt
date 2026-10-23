@@ -1,0 +1,34 @@
+AVISO DE ATRIBUCIÓN Y LICENCIA — Modelo 3D del Douglas DC-3/C-47
+================================================================
+
+Origen del modelo 3D
+--------------------
+- Fuente: "Douglas-Dc3-master.zip" (Repositorios de aviones del proyecto).
+- Aeronave: Douglas DC-3 / C-47 (FlightGear). Modelo comunitario del proyecto
+  FlightGear; créditos en el archivo "contributors.txt" del paquete original
+  (equipo PAF y colaboradores, entre ellos Helijah).
+  wiki.flightgear.org/Fr/Douglas_DC-3-C47
+
+Licencia
+--------
+- El modelo está bajo GNU General Public License v2 (GPL v2). Texto íntegro en
+  "LICENCIA-DC3-GPLv2.txt" de este directorio.
+
+Transformación realizada
+------------------------
+- Conversión de "Models" (exterior) y "Models/Interior" (cabina) del formato
+  AC3D (.ac) a glTF 2.0 mediante "convertir_dc3.py" (Python, este directorio).
+- Se conservaron geometría, UV, texturas PNG y nombres de objetos; se
+  reconstruyeron normales y materiales PBR. La vista exterior se presenta en
+  wireframe; la cabina mantiene sus texturas.
+- La animación FlightGear (agujas/palancas por XML) NO se exportó; la cabina
+  es estática y la identificación de piezas por clic es solo informativa.
+
+Obligaciones GPL v2
+-------------------
+- El código fuente original (archivos .ac) está en el ZIP citado y en el
+  repositorio público de FlightGear.
+- Esta obra derivada (glTF/GLB) se distribuye bajo GPL v2; si se redistribuye
+  debe incluirse el texto de la licencia y facilitarse el código fuente.
+
+No se declara este modelo como obra original de Eben Ezer Aviation.

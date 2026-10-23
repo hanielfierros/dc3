@@ -1,0 +1,5 @@
+Dependencias (solo desarrollo local):
+
+  Python 3.12 (biblioteca estándar; sin paquetes externos)
+
+El sitio desplegado es estático (HTML/CSS/JS/SVG/JSON/PNG).

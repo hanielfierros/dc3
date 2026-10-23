@@ -1,0 +1,37 @@
+# Auditoría — Proyecto AATD DC3
+
+Fecha: (generación automática)
+Resultado de la revisión de la plataforma antes de la reconstrucción.
+
+## 1. Estado general
+- 25 archivos en la raíz (estructura plana, sin subcarpetas).
+- 8 módulos principales + 5 módulos auxiliares implementados y funcionales.
+- Validación automática (`validar.py`): 12/12 OK (CONFORME).
+
+## 2. Hallazgos detectados y corregidos
+| Tipo | Prioridad | Hallazgo | Acción |
+|------|-----------|----------|--------|
+| Funcional | Alta | Botón inerte en la EDT ("Ver documento") sin manejador de clic | Corregido: ahora muestra la referencia del documento (no un enlace falso) |
+| Datos | Media | URL AFAC (gob.mx/afac) devuelve validación anti-bot; contenido no verificable en línea | Nota actualizada: dominio oficial confirmado, contenido por verificar |
+| Datos | Media | 2 PDF de la Biblioteca Técnica superan el límite de publicación | Reportados en `informe_archivos.txt` y marcados "Bajo revisión" |
+
+## 3. Datos faltantes (marcados pendientes, sin fabricar)
+- Presupuesto y beneficios cuantitativos → "Pendiente de estimación".
+- Fechas de fin y duraciones del cronograma → "Propuesto — por confirmar".
+- Responsables de equipo (salvo CEO y supervisor) → "Pendiente de verificación".
+- Progreso de los 7 equipos → 0 % (sin registros reales).
+- Incidentes, acuerdos y avances → vacíos (sin datos ficticios).
+
+## 4. Enlaces y recursos
+- Sin enlaces rotos internos (validado por script).
+- Referencias oficiales: FAA AC verificada (fuente oficial); AFAC con dominio confirmado y contenido por confirmar.
+
+## 5. Riesgos técnicos y limitaciones
+- Playwright no instalado → no se ejecutaron pruebas de navegador automatizadas (verificación manual pendiente).
+- Git no inicializado → sin control de versiones ni publicación remota todavía.
+- 2 documentos de la biblioteca exceden el límite de tamaño para la web.
+
+## 6. Prioridades
+1. (Alta, resuelto) Eliminar controles inertes.
+2. (Alta, pendiente de autorización) Inicializar el repositorio Git.
+3. (Media) Verificar el contenido específico de AFAC y probar en navegador real.
