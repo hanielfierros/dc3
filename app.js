@@ -720,9 +720,31 @@
       "<p>No se han registrado acuerdos. No se muestran acuerdos ficticios.</p>";
   }
   function renderPracticas() {
-    $("#practicas-contenido").innerHTML =
-      '<div class="icono">🧪</div><h3>Prácticas — sin contenido</h3>' +
-      "<p>Esta sección está reservada para las prácticas del proyecto; aún no hay registros.</p>";
+    var ps = D.practicas || [];
+    if (!ps.length) {
+      $("#practicas-contenido").innerHTML =
+        '<div class="estado-vacio"><div class="icono">🧪</div><h3>Prácticas — sin contenido</h3>' +
+        "<p>Esta sección está reservada para las prácticas del proyecto; aún no hay registros.</p></div>";
+      return;
+    }
+    $("#practicas-contenido").innerHTML = ps.map(function (p) {
+      var num = ("0" + p.numero).slice(-2);
+      var sub = p.codigo + (p.nivel ? " · " + p.nivel : "");
+      return '<div class="card practica-card">' +
+        '<div class="practica-cab">' +
+          '<span class="practica-numero">' + num + "</span>" +
+          '<div class="practica-titulos">' +
+            '<span class="practica-codigo">' + esc(sub) + "</span>" +
+            "<h4>" + esc(p.nombre) + "</h4>" +
+          "</div>" +
+        "</div>" +
+        '<p class="practica-objetivo"><strong>Objetivo:</strong> ' + esc(p.objetivo) + "</p>" +
+        '<div class="card-acciones">' +
+          '<button class="boton" type="button" data-ver-pdf="' + esc(p.archivo) +
+            '" data-titulo="' + esc(p.codigo + " — " + p.nombre) + '">Ver PDF</button>' +
+        "</div>" +
+        "</div>";
+    }).join("");
   }
 
   /* ================= AVANCES ================= */

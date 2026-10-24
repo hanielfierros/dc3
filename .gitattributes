@@ -1,0 +1,11 @@
+# Recursos binarios: evitar la conversión de saltos de línea (core.autocrlf)
+# que corrompería PDFs, imágenes y modelos 3D al publicarse en GitHub Pages.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.bin   binary
+*.gltf  binary
+*.xlsx  binary
+*.pyc   binary

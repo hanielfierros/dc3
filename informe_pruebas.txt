@@ -1,5 +1,5 @@
 Informe de pruebas - Plataforma AATD DC3
-Fecha: 2026-10-23T09:49:06.867522
+Fecha: 2026-10-23T22:25:21.632185
 ======================================================================
 
   [OK]   Estructura plana (sin subcarpetas) - subcarpetas: []
@@ -13,6 +13,11 @@ Fecha: 2026-10-23T09:49:06.867522
   [OK]   SVG panel-kingair90.svg legible
   [OK]   SVG diagrama_arquitectura.svg legible
   [OK]   Archivos de biblioteca disponibles existen - faltantes: []
+  [OK]   Prácticas: exactamente 10 - cantidad: 10
+  [OK]   Prácticas: numeración 1..10 en orden - numeración: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  [OK]   Prácticas: nombre presente en todas - sin nombre: []
+  [OK]   Prácticas: objetivo presente en todas - sin objetivo: []
+  [OK]   Prácticas: PDF de cada práctica presente - faltantes: []
   [OK]   Sin IDs duplicados de órdenes de trabajo - duplicados: []
   [OK]   PDF Plan Maestro con firma válida - firma: b'%PDF-'
   [OK]   Codificación UTF-8 sin BOM ni mojibake - afectados: []
@@ -22,4 +27,4 @@ Fecha: 2026-10-23T09:49:06.867522
   [OK]   Cronograma con 5+ categorías de complejidad - categorías: 5
   [OK]   Todas las OI tienen fecha y complejidad asignada - sin asignación: 0
 
-RESULTADO: 19 verificaciones, 19 OK, 0 errores -> CONFORME
+RESULTADO: 24 verificaciones, 24 OK, 0 errores -> CONFORME

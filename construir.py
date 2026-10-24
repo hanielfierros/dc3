@@ -22,6 +22,7 @@ PROYECTO = os.path.dirname(ROOT)  # Simulador DC3
 DPC = os.path.join(PROYECTO, "Proyecto DPC DC3")
 BT = os.path.join(PROYECTO, "Biblioteca Técnica")
 FIG = os.path.join(PROYECTO, "Figuras y diagramas")
+PE = os.path.join(PROYECTO, "Programas de Estudio")
 
 PEND = "Pendiente de verificación"
 PEND_EST = "Pendiente de estimación"
@@ -1347,6 +1348,90 @@ def construir_biblioteca():
     return docs, sobre
 
 
+def _objetivo_general(j):
+    """Extrae el objetivo general del programa desde cualquiera de los dos
+    esquemas de programa.json presentes en la serie EEA-IFR."""
+    gd = j.get("guia_didactica")
+    if isinstance(gd, dict):
+        og = gd.get("objetivo_general")
+        if isinstance(og, dict) and isinstance(og.get("texto"), str) and og["texto"].strip():
+            return og["texto"].strip()
+    ident = j.get("identificacion")
+    if isinstance(ident, dict):
+        for ss in ident.get("subsecciones", []):
+            if isinstance(ss, dict) and (ss.get("titulo") or "").strip().lower() == "objetivo general":
+                for clave in ("parrafos", "items"):
+                    vals = ss.get(clave)
+                    if isinstance(vals, list) and vals and isinstance(vals[0], str) and vals[0].strip():
+                        return vals[0].strip()
+    return ""
+
+
+def construir_practicas():
+    """Escanea los PDF numerados de la serie EEA-IFR en `Programas de Estudio`,
+    extrae nombre/objetivo del programa.json correspondiente, verifica el texto
+    del PDF y copia cada PDF a la raíz (nombre original, sin depender de la
+    ruta de Windows). Devuelve (practicas, pendientes)."""
+    if not os.path.isdir(PE):
+        return [], []
+    practicas = []
+    pendientes = []
+    try:
+        from pypdf import PdfReader
+        tiene_pypdf = True
+    except Exception:
+        tiene_pypdf = False
+    for f in sorted(os.listdir(PE)):
+        if not re.match(r"^EEA-IFR-\d{2}-.+\.pdf$", f, re.I):
+            continue
+        fp = os.path.join(PE, f)
+        if not os.path.isfile(fp):
+            continue
+        base = os.path.splitext(f)[0]
+        num = int(re.match(r"^EEA-IFR-(\d{2})", base, re.I).group(1))
+        codigo = "EEA-IFR-%02d" % num
+        nombre = nivel = objetivo = ""
+        pend_razones = []
+        pj = os.path.join(PE, base, "data", "programa.json")
+        if os.path.exists(pj):
+            try:
+                j = json.load(open(pj, encoding="utf-8"))
+                pr = j.get("programa", {})
+                nombre = (pr.get("nombre") or "").strip()
+                nivel = (pr.get("nivel") or "").strip()
+                codigo = (pr.get("codigo") or codigo).strip()
+                objetivo = _objetivo_general(j)
+            except Exception as ex:
+                pend_razones.append("programa.json no legible (%s)" % ex)
+        else:
+            pend_razones.append("falta data/programa.json")
+        if not nombre:
+            pend_razones.append("nombre no identificado")
+        if not objetivo:
+            pend_razones.append("objetivo no identificado")
+        # Verificación del texto del PDF (preferente a OCR solo si no extrae texto)
+        texto_pdf = ""
+        if tiene_pypdf:
+            try:
+                lector = PdfReader(fp)
+                texto_pdf = "\n".join((pg.extract_text() or "") for pg in lector.pages)
+            except Exception as ex:
+                pend_razones.append("PDF no legible (%s)" % ex)
+        if not texto_pdf.strip():
+            pend_razones.append("PDF sin texto extraíble (posible escaneado)")
+        destino = f
+        shutil.copyfile(fp, os.path.join(ROOT, destino))
+        practicas.append({
+            "numero": num, "codigo": codigo, "nombre": nombre,
+            "nivel": nivel, "objetivo": objetivo, "archivo": destino,
+        })
+        if pend_razones:
+            pendientes.append({"codigo": codigo, "archivo": destino,
+                               "motivo": "; ".join(pend_razones)})
+    practicas.sort(key=lambda p: p["numero"])
+    return practicas, pendientes
+
+
 def generar_svg():
     def _escribir(nombre, contenido):
         open(os.path.join(ROOT, nombre), "w", encoding="utf-8").write(contenido)
@@ -1673,7 +1758,7 @@ def _enriquecer_equipos(equipos, cronograma):
     return result
 
 
-def generar_datos(equipos, arbol, cronograma, biblioteca, sobre, descargas):
+def generar_datos(equipos, arbol, cronograma, biblioteca, sobre, descargas, practicas):
     crono_publico = {k: cronograma[k] for k in
                      ("inicio", "inicio_marca", "fin", "span", "escala", "categorias")}
     equipos_enriquecidos = _enriquecer_equipos(equipos, cronograma)
@@ -1703,6 +1788,7 @@ def generar_datos(equipos, arbol, cronograma, biblioteca, sobre, descargas):
         "avances": [],
         "biblioteca": biblioteca,
         "referencias_oficiales": REFERENCIAS_OFICIALES,
+        "practicas": practicas,
         "sobre_limite": sobre,
         "descargas": descargas,
         "glosario": [{"termino": t, "definicion": d} for t, d in GLOSARIO],
@@ -1858,7 +1944,8 @@ def main():
     arbol = construir_edt(equipos, cronograma["mapa"])
     biblioteca, sobre = construir_biblioteca()
     descargas = escanear_descargas()
-    datos = generar_datos(equipos, arbol, cronograma, biblioteca, sobre, descargas)
+    practicas, practicas_pend = construir_practicas()
+    datos = generar_datos(equipos, arbol, cronograma, biblioteca, sobre, descargas, practicas)
     generar_svg()
     escribir_meta(sobre)
     earth = copiar_earth()
@@ -1869,6 +1956,9 @@ def main():
     print("Riesgos:", len(datos["riesgos"]))
     print("Biblioteca (disponibles):", sum(1 for b in biblioteca if b["estado"] == "Disponible"))
     print("Biblioteca (bajo revisión):", len(sobre))
+    print("Prácticas:", len(practicas))
+    if practicas_pend:
+        print("Prácticas pendientes de verificación:", len(practicas_pend))
     print("earth.jpg:", "copiado" if earth else "no encontrado")
     print("Plan Maestro PDF:", "copiado" if pm else "no encontrado")
     print("Órdenes de trabajo (PDF) copiadas:", n_oi)

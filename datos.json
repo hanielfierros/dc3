@@ -11650,6 +11650,88 @@
       "nota": "Fuente pública oficial de la FAA; la AC aplicable se selecciona tras verificar el contenido."
     }
   ],
+  "practicas": [
+    {
+      "numero": 1,
+      "codigo": "EEA-IFR-01",
+      "nombre": "Familiarización con la Cabina, Aviónica GTN 750 y Flujo de Instrumentos (Nivel: Inicial)",
+      "nivel": "Inicial",
+      "objetivo": "Desarrollar en el alumno la familiarización inicial con la cabina de una aeronave de cabina adaptada al King Air 350, la operación básica del Garmin GTN 750, el manejo introductorio del piloto automático/director de vuelo y la coordinación de tripulación PF/PM en IFR, dentro de los límites de un simulador AATD con fines de formación en tierra.",
+      "archivo": "EEA-IFR-01-Familiarizacion_Cabina_GTN750_Flujo_Instrumentos.pdf"
+    },
+    {
+      "numero": 2,
+      "codigo": "EEA-IFR-02",
+      "nombre": "Vuelo Básico de Instrumentos, Control de Actitud y Patrones de Vuelo (Nivel: Inicial)",
+      "nivel": "Inicial",
+      "objetivo": "Desarrollar en el alumno la capacidad de controlar la actitud y la trayectoria de la aeronave exclusivamente por referencia instrumental, manteniendo los parámetros asignados en vuelo recto y nivelado, ascensos, descensos, virajes y patrones de entrenamiento, dentro de los límites de un simulador AATD con fines de formación en tierra.",
+      "archivo": "EEA-IFR-02-Vuelo_Basico_Instrumentos_Control_Actitud_Patrones.pdf"
+    },
+    {
+      "numero": 3,
+      "codigo": "EEA-IFR-03",
+      "nombre": "Navegación Convencional VOR, Intersección de Radiales y Tracking (Nivel: Intermedio)",
+      "nivel": "Intermedio",
+      "objetivo": "Dominar el uso e interpretación de radioayudas terrestres clásicas mediante la lectura analógica y digital de agujas CDI y RMI en cabina, desarrollando competencias de sintonización, identificación de estaciones, interceptación y seguimiento de radiales, navegación por arcos DME e interpretación de cartas de ruta.",
+      "archivo": "EEA-IFR-03-Navegacion_VOR_Interseccion_Radiales_Tracking.pdf"
+    },
+    {
+      "numero": 4,
+      "codigo": "EEA-IFR-04",
+      "nombre": "Patrones de Espera (Holdings) Convencionales y de GPS (Nivel: Intermedio)",
+      "nivel": "Intermedio",
+      "objetivo": "Desarrollar la visualización espacial necesaria para incorporarse a circuitos de espera, ejecutar sus tramos y corregirlos por tiempo y viento mediante los sistemas de navegación de la cabina, manteniendo conciencia situacional, disciplina de procedimientos y coordinación de tripulación.",
+      "archivo": "EEA-IFR-04-Patrones_Espera_Holdings_Convencionales_GPS.pdf"
+    },
+    {
+      "numero": 5,
+      "codigo": "EEA-IFR-05",
+      "nombre": "Procedimientos de Llegada (STAR) y Transiciones IFR (Nivel: Intermedio)",
+      "nivel": "Intermedio",
+      "objetivo": "Interpretar y ejecutar en simulador las Cartas de Llegada ATS Estándar (STAR) y sus transiciones, comprendiendo las restricciones publicadas, los perfiles de descenso, la programación en el GTN 750 y la gestión de modificaciones de último momento por ATC.",
+      "archivo": "EEA-IFR-05-Procedimientos_Llegada_STAR_Transiciones_IFR.pdf"
+    },
+    {
+      "numero": 6,
+      "codigo": "EEA-IFR-06",
+      "nombre": "Aproximaciones de Precisión ILS / Localizador (Nivel: Avanzado)",
+      "nivel": "Avanzado",
+      "objetivo": "Desarrollar competencias avanzadas de interpretación, preparación, ejecución y monitorización de aproximaciones ILS y Localizador en simulador, incluyendo la corrección de desviaciones LOC/GS, la gestión de mínimos publicados, la evaluación de criterios de continuación y la transición a una aproximación frustrada cuando corresponda.",
+      "archivo": "EEA-IFR-06-Aproximaciones_Precision_ILS_Localizador.pdf"
+    },
+    {
+      "numero": 7,
+      "codigo": "EEA-IFR-07",
+      "nombre": "Aproximaciones de No Precisión (VOR, DME, RNAV/GNSS) (Nivel: Avanzado)",
+      "nivel": "Avanzado",
+      "objetivo": "Entrenar al alumno en la ejecución de aproximaciones de no precisión en un entorno IFR simulado, utilizando instalaciones de radionavegación terrestre o satelital verificadas, aplicando la técnica CDFA y gestionando correctamente la MDA, el perfil vertical, los modos de navegación y la coordinación de tripulación.",
+      "archivo": "EEA-IFR-07-Aproximaciones_No_Precision_VOR_DME_RNAV_GNSS.pdf"
+    },
+    {
+      "numero": 8,
+      "codigo": "EEA-IFR-08",
+      "nombre": "Salidas de Instrumentos (SID) y Transición en Ruta (Nivel: Avanzado)",
+      "nivel": "Avanzado",
+      "objetivo": "Entrenar al alumno en la correcta interpretación de las SID, la verificación de los gradientes de ascenso y el franqueamiento de obstáculos, la transición del despegue al vuelo por instrumentos, la gestión de salidas convencionales y RNAV, y el análisis de escenarios de falla de comunicaciones conforme a la normativa mexicana aplicable.",
+      "archivo": "EEA-IFR-08-Salidas_Instrumentos_SID_Transicion_Ruta.pdf"
+    },
+    {
+      "numero": 9,
+      "codigo": "EEA-IFR-09",
+      "nombre": "Vuelos de Ruta IFR Regionales Completos - Conexiones Norte y Centro (Nivel: Experto)",
+      "nivel": "Experto",
+      "objetivo": "Ejecutar vuelos IFR regionales completos gate-to-gate en un simulador IFR, integrando la salida instrumental, la navegación en ruta, la transición al área terminal, la aproximación y la decisión de aproximación frustrada, con énfasis en la conciencia del terreno, el cumplimiento de altitudes y gradientes, la gestión de la carga de trabajo y la coordinación PF/PM.",
+      "archivo": "EEA-IFR-09-Vuelos_Ruta_IFR_Regionales_Conexiones_Norte_Centro.pdf"
+    },
+    {
+      "numero": 10,
+      "codigo": "EEA-IFR-10",
+      "nombre": "Vuelos de Ruta IFR Regionales Completos - Conexiones Sureste y Occidente (Nivel: Experto)",
+      "nivel": "Experto",
+      "objetivo": "Ejecutar vuelos IFR regionales completos gate-to-gate en un simulador IFR, integrando la salida instrumental, la navegación en ruta, el análisis meteorológico, la conciencia del terreno, la llegada, la aproximación, la decisión de frustrada y la gestión de fallas simuladas de aviónica, con coordinación PF/PM.",
+      "archivo": "EEA-IFR-10-Vuelos_Ruta_IFR_Regionales_Conexiones_Sureste_Occidente.pdf"
+    }
+  ],
   "sobre_limite": [],
   "descargas": [
     {

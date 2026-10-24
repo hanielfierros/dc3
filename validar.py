@@ -30,8 +30,9 @@ def main():
     def check(desc, cond, detalle=""):
         resultados.append((cond, desc + ((" - " + detalle) if detalle else "")))
 
-    # 1) estructura plana
-    subdirs = [d for d in os.listdir(ROOT) if os.path.isdir(os.path.join(ROOT, d))]
+    # 1) estructura plana (el directorio de metadatos .git no se publica)
+    subdirs = [d for d in os.listdir(ROOT)
+               if os.path.isdir(os.path.join(ROOT, d)) and d != ".git"]
     check("Estructura plana (sin subcarpetas)", not subdirs, "subcarpetas: %s" % subdirs)
 
     # 2) archivos requeridos
@@ -43,7 +44,7 @@ def main():
         datos = json.load(open(os.path.join(ROOT, "datos.json"), encoding="utf-8"))
         claves = ["proyecto", "responsables", "equipos", "edt", "cronograma",
                   "comunicacion", "fases", "riesgos", "incidentes", "acuerdos",
-                  "avances", "biblioteca", "referencias_oficiales", "glosario"]
+                  "avances", "biblioteca", "referencias_oficiales", "glosario", "practicas"]
         ok = all(k in datos for k in claves)
         check("datos.json válido y con claves", ok,
               "equipos=%d riesgos=%d biblioteca=%d" % (len(datos.get("equipos", [])),
@@ -95,6 +96,20 @@ def main():
     falt_bib = [b["archivo"] for b in bib
                 if b.get("estado") == "Disponible" and not os.path.exists(os.path.join(ROOT, b["archivo"]))]
     check("Archivos de biblioteca disponibles existen", not falt_bib, "faltantes: %s" % falt_bib)
+
+    # 7b) prácticas (serie EEA-IFR): 10, ordenadas, con nombre/objetivo y PDF presente
+    pracs = datos.get("practicas", [])
+    nums = [p.get("numero") for p in pracs]
+    check("Prácticas: exactamente 10", len(pracs) == 10, "cantidad: %d" % len(pracs))
+    check("Prácticas: numeración 1..10 en orden", nums == list(range(1, 11)),
+          "numeración: %s" % nums)
+    sin_nombre = [p["codigo"] for p in pracs if not p.get("nombre")]
+    check("Prácticas: nombre presente en todas", not sin_nombre, "sin nombre: %s" % sin_nombre)
+    sin_obj = [p["codigo"] for p in pracs if not p.get("objetivo")]
+    check("Prácticas: objetivo presente en todas", not sin_obj, "sin objetivo: %s" % sin_obj)
+    falt_pdf = [p["archivo"] for p in pracs
+                if not os.path.exists(os.path.join(ROOT, p.get("archivo", "")))]
+    check("Prácticas: PDF de cada práctica presente", not falt_pdf, "faltantes: %s" % falt_pdf)
 
     # 8) duplicados de número de OI en equipos
     nums = {}

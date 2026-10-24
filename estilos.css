@@ -188,6 +188,20 @@ main { flex: 1; max-width: 1240px; width: 100%; margin: 0 auto; padding: 28px 28
 .card p { margin: 4px 0; font-size: 0.88rem; color: var(--texto-suave); }
 .card .card-acciones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 
+/* Prácticas (serie EEA-IFR) */
+.practicas-lista { display: flex; flex-direction: column; gap: 14px; }
+.practica-card .practica-cab { display: flex; align-items: flex-start; gap: 14px; }
+.practica-numero {
+  flex: 0 0 auto; min-width: 44px; padding: 6px 0; text-align: center;
+  font-family: "Consolas", monospace; font-size: 1.3rem; font-weight: 700;
+  color: var(--acento); background: var(--fondo-3); border: 1px solid var(--borde);
+  border-radius: var(--radio-s);
+}
+.practica-titulos { flex: 1 1 auto; }
+.practica-codigo { display: block; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.03em; color: var(--texto-suave); text-transform: uppercase; }
+.practica-card h4 { margin: 2px 0 0; }
+.practica-objetivo { margin: 10px 0 0 !important; font-size: 0.88rem; color: var(--texto-suave); line-height: 1.5; }
+
 .dos-columnas { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; margin-top: 6px; }
 
 /* Estado de equipos */
