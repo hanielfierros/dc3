@@ -44,7 +44,8 @@ def main():
         datos = json.load(open(os.path.join(ROOT, "datos.json"), encoding="utf-8"))
         claves = ["proyecto", "responsables", "equipos", "edt", "cronograma",
                   "comunicacion", "fases", "riesgos", "incidentes", "acuerdos",
-                  "avances", "biblioteca", "referencias_oficiales", "glosario", "practicas"]
+                  "avances", "biblioteca", "referencias_oficiales", "glosario",
+                  "practicas", "materiales", "estados_material", "gobernanza"]
         ok = all(k in datos for k in claves)
         check("datos.json válido y con claves", ok,
               "equipos=%d riesgos=%d biblioteca=%d" % (len(datos.get("equipos", [])),
@@ -118,6 +119,78 @@ def main():
             nums[o.get("id")] = nums.get(o.get("id"), 0) + 1
     dups = [k for k, v in nums.items() if v > 1]
     check("Sin IDs duplicados de órdenes de trabajo", not dups, "duplicados: %s" % dups)
+
+    # 8b) materiales: estructura, módulos M01..M05, ítems válidos y sin duplicados
+    mats = datos.get("materiales", [])
+    estados_ok = set(datos.get("estados_material", []))
+    mods_ok = [m.get("id") for m in mats] == ["M01", "M02", "M03", "M04", "M05"]
+    check("Materiales: exactamente M01..M05 en orden", mods_ok,
+          "módulos: %s" % [m.get("id") for m in mats])
+    ids_mat = {}
+    items_invalidos = []
+    for m in mats:
+        for it in m.get("items", []):
+            iid = it.get("id")
+            ids_mat[iid] = ids_mat.get(iid, 0) + 1
+            if not all(k in it for k in ("id", "nombre", "grupo", "cantidad", "unidad",
+                                         "especificacion", "estado", "observacion")):
+                items_invalidos.append(iid)
+            if it.get("estado") not in estados_ok:
+                items_invalidos.append("%s (estado)" % iid)
+            if it.get("cantidad") is not None and not isinstance(it.get("cantidad"), (int, float)):
+                items_invalidos.append("%s (cantidad)" % iid)
+    dups_mat = [k for k, v in ids_mat.items() if v > 1]
+    check("Materiales: ítems con campos completos y estado válido", not items_invalidos,
+          "inválidos: %s" % items_invalidos[:10])
+    check("Materiales: sin IDs duplicados de ítem", not dups_mat, "duplicados: %s" % dups_mat)
+
+    # 8c) gobernanza: roles, perfil del líder, reglas de equipo y comunicación
+    gob = datos.get("gobernanza", {})
+    roles = gob.get("roles", [])
+    ids_roles = [r.get("id") for r in roles]
+    check("Gobernanza: exactamente 5 roles", ids_roles ==
+          ["ceo", "ingenieria-operaciones", "supervisor-planeacion", "profesores-ipn", "lideres-equipo"],
+          "roles: %s" % ids_roles)
+    roles_inv = []
+    for r in roles:
+        if not all(k in r for k in ("id", "icono", "nombre", "cargo", "rol", "resumen",
+                                    "responsabilidades", "limite", "entregables",
+                                    "reporta_a", "comunica_con")):
+            roles_inv.append(r.get("id"))
+        if not isinstance(r.get("responsabilidades"), list) or not r.get("responsabilidades"):
+            roles_inv.append(r.get("id") + " (responsabilidades)")
+        if not r.get("limite"):
+            roles_inv.append(r.get("id") + " (limite)")
+    check("Gobernanza: roles con campos completos", not roles_inv, "inválidos: %s" % roles_inv)
+    check("Gobernanza: 10 criterios del perfil del líder",
+          len(gob.get("perfil_lider", {}).get("criterios", [])) == 10)
+    check("Gobernanza: frase del perfil presente",
+          bool(gob.get("perfil_lider", {}).get("frase")))
+    check("Gobernanza: 7 reglas para conformar equipos",
+          len(gob.get("reglas_equipos", {}).get("reglas", [])) == 7)
+    check("Gobernanza: reglas de comunicación presentes",
+          bool(gob.get("comunicacion", {}).get("reglas")))
+
+    # 8d) gobernanza: equipos de trabajo (7, con campos completos)
+    et = gob.get("equipos_trabajo", {})
+    eqs = et.get("equipos", [])
+    eq_ids = [e.get("id") for e in eqs]
+    check("Equipos de trabajo: exactamente 7 en orden", eq_ids ==
+          ["limpieza", "supervision-planeacion", "avionica-instrumentacion",
+           "mecanica-mandos", "software-integracion", "electronica-sensorizacion",
+           "simulacion-validacion"], "ids: %s" % eq_ids)
+    eq_inv = []
+    for e in eqs:
+        for campo in ("id", "icono", "nombre", "responsabilidades", "actividades",
+                      "entregables", "dependencias", "perfil_lider"):
+            if campo not in e:
+                eq_inv.append(e.get("id", "?") + " (" + campo + ")")
+        for campo in ("responsabilidades", "actividades", "entregables", "dependencias", "perfil_lider"):
+            if not isinstance(e.get(campo), list) or not e.get(campo):
+                eq_inv.append(e.get("id", "?") + " (" + campo + " vacío)")
+    check("Equipos de trabajo: campos completos", not eq_inv, "inválidos: %s" % eq_inv)
+    check("Equipos de trabajo: relaciones de colaboración presentes",
+          bool(et.get("relaciones")))
 
     # 9) PDF del Plan Maestro (firma y legibilidad)
     pm = os.path.join(ROOT, "Plan_Maestro_DC3_Eben_Ezer_Aviation.pdf")

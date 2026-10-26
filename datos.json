@@ -9,7 +9,7 @@
     "eslogan": "A la altura de Nuestra Identidad. Ingeniería Aeronáutica.",
     "departamento": "Departamento de Ingeniería Aeronáutica Aplicada",
     "empresa": "Eben Ezer Aviation",
-    "fecha": "2026-10-23",
+    "fecha": "2026-10-26",
     "presupuesto": "Pendiente de estimación",
     "beneficios_cuantitativos": "Pendiente de estimación"
   },
@@ -11844,5 +11844,1763 @@
       "termino": "SID / STAR",
       "definicion": "Salida / llegada normalizada por instrumentos; solo con datos verificados (AIP)."
     }
-  ]
+  ],
+  "materiales": [
+    {
+      "id": "M01",
+      "nombre": "Cabina, estructura física y mandos de vuelo",
+      "descripcion": "Inventario y recuperación de la cabina existente y de los mandos originales reutilizables, con los materiales, herramientas y consumibles para limpiar, desoxidar, reparar, pintar e instalar.",
+      "items": [
+        {
+          "id": "M01-001",
+          "nombre": "Fuselaje Douglas DC-3 (XB-DPC)",
+          "grupo": "Estructura y cabina",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Cabina y estructura original del avión; objeto del proyecto.",
+          "estado": "Existente",
+          "observacion": "Incluye toda la estructura a inspeccionar, limpiar y recuperar."
+        },
+        {
+          "id": "M01-002",
+          "nombre": "Paneles de cabina (chapas y carenados)",
+          "grupo": "Estructura y cabina",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Paneles desmontables originales.",
+          "estado": "Recuperable",
+          "observacion": "Verificar el estado de cada panel; conservar los reutilizables."
+        },
+        {
+          "id": "M01-003",
+          "nombre": "Asiento del piloto",
+          "grupo": "Estructura y cabina",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Asiento original de la cabina.",
+          "estado": "Recuperable",
+          "observacion": "Reutilizar si el estado estructural lo permite."
+        },
+        {
+          "id": "M01-004",
+          "nombre": "Asiento del copiloto",
+          "grupo": "Estructura y cabina",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Asiento original de la cabina.",
+          "estado": "Recuperable",
+          "observacion": "Reutilizar si el estado estructural lo permite."
+        },
+        {
+          "id": "M01-005",
+          "nombre": "Consola o pedestal central",
+          "grupo": "Estructura y cabina",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Pedestal central de la cabina.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Confirmar si existe en cabina y su estado."
+        },
+        {
+          "id": "M01-006",
+          "nombre": "Volante (yoke) original",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Mando de control de alabeo y cabeceo.",
+          "estado": "Recuperable",
+          "observacion": "Verificar cuántos volantes hay y su estado de conservación."
+        },
+        {
+          "id": "M01-007",
+          "nombre": "Columna de control",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Columna que transmite el movimiento del volante.",
+          "estado": "Recuperable",
+          "observacion": "Inspeccionar articulaciones y herrajes."
+        },
+        {
+          "id": "M01-008",
+          "nombre": "Pedales de timón (rudder)",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Pedales originales del timón de dirección.",
+          "estado": "Recuperable",
+          "observacion": "Revisar mecanismo, cables y resortes."
+        },
+        {
+          "id": "M01-009",
+          "nombre": "Palanca o actuador de flaps",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Mando de los flaps.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Confirmar presencia y estado; puede requerir reparación."
+        },
+        {
+          "id": "M01-010",
+          "nombre": "Mecanismo de tren de aterrizaje",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Palanca o mecanismo de tren.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Confirmar si se reutiliza el mecanismo original."
+        },
+        {
+          "id": "M01-011",
+          "nombre": "Cables y mecanismos de transmisión de mandos",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Cables, poleas y soportes de transmisión.",
+          "estado": "Recuperable",
+          "observacion": "Verificar estado, corrosión y tensión de cada tramo."
+        },
+        {
+          "id": "M01-012",
+          "nombre": "Soportes y herrajes de montaje de mandos",
+          "grupo": "Mandos de vuelo",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Herrajes y soportes de fijación.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Inventariar piezas presentes y faltantes."
+        },
+        {
+          "id": "M01-013",
+          "nombre": "Juego de llaves (boca, corona y cubo)",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "juego",
+          "especificacion": "Medidas métricas y estándar.",
+          "estado": "Por comprar",
+          "observacion": "Adquirir conforme a la tornillería encontrada."
+        },
+        {
+          "id": "M01-014",
+          "nombre": "Destornilladores (plano, Phillips y Torx)",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "juego",
+          "especificacion": "Varios tamaños.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-015",
+          "nombre": "Alicates (punta, corte y presión)",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "juego",
+          "especificacion": "Para sujeción y corte de cables y chapa.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-016",
+          "nombre": "Cepillo de alambre / cepillo metálico",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para remoción de óxido superficial.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-017",
+          "nombre": "Lijas de varios granos (80 a 400)",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Granos para desbastar y preparar superficie.",
+          "estado": "Por comprar",
+          "observacion": "Grano a confirmar según el acabado requerido."
+        },
+        {
+          "id": "M01-018",
+          "nombre": "Taladro y brocas para metal",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Brocas para metal de medidas por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-019",
+          "nombre": "Trapos / paños de limpieza",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Paños sin pelusa.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-020",
+          "nombre": "Desengrasante / limpiador industrial",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "litro",
+          "especificacion": "Producto por definir según la superficie a limpiar.",
+          "estado": "Por comprar",
+          "observacion": "Verificar compatibilidad con el material."
+        },
+        {
+          "id": "M01-021",
+          "nombre": "Removedor o convertidor de óxido",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "litro",
+          "especificacion": "Producto para tratamiento anticorrosivo.",
+          "estado": "Por comprar",
+          "observacion": "Seleccionar según el grado de corrosión."
+        },
+        {
+          "id": "M01-022",
+          "nombre": "WD-40 / lubricante penetrante",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Aflojar tornillería y proteger temporalmente.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-023",
+          "nombre": "Masilla o epóxico de relleno para metal",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Relleno de picaduras y pequeñas imperfecciones.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-024",
+          "nombre": "Imprimación anticorrosiva",
+          "grupo": "Pintura y protección",
+          "cantidad": null,
+          "unidad": "litro",
+          "especificacion": "Base anticorrosiva para metal.",
+          "estado": "Por comprar",
+          "observacion": "Tipo y color por confirmar."
+        },
+        {
+          "id": "M01-025",
+          "nombre": "Pintura de acabado",
+          "grupo": "Pintura y protección",
+          "cantidad": null,
+          "unidad": "litro",
+          "especificacion": "Acabado para cabina y mandos.",
+          "estado": "Por comprar",
+          "observacion": "Color y acabado por confirmar."
+        },
+        {
+          "id": "M01-026",
+          "nombre": "Thinner / diluyente",
+          "grupo": "Pintura y protección",
+          "cantidad": null,
+          "unidad": "litro",
+          "especificacion": "Diluyente compatible con la pintura elegida.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M01-027",
+          "nombre": "Protección anticorrosiva temporal",
+          "grupo": "Pintura y protección",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para zonas no pintadas durante el montaje.",
+          "estado": "Por comprar",
+          "observacion": ""
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "nombre": "Panel e instrumentación",
+      "descripcion": "Instrumentación principalmente virtual. Considera dos monitores ordinarios y un monitor táctil, con sus conexiones, alimentación, soportes y materiales de prueba pantalla por pantalla.",
+      "items": [
+        {
+          "id": "M02-001",
+          "nombre": "Monitor de instrumentos 1",
+          "grupo": "Pantallas",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Monitor ordinario para instrumentación.",
+          "estado": "Por comprar",
+          "observacion": "Tamaño y resolución por confirmar."
+        },
+        {
+          "id": "M02-002",
+          "nombre": "Monitor de instrumentos 2",
+          "grupo": "Pantallas",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Monitor ordinario para instrumentación.",
+          "estado": "Por comprar",
+          "observacion": "Tamaño y resolución por confirmar."
+        },
+        {
+          "id": "M02-003",
+          "nombre": "Monitor táctil",
+          "grupo": "Pantallas",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Monitor con pantalla táctil (por ejemplo, para GTN 750).",
+          "estado": "Por comprar",
+          "observacion": "Compatibilidad táctil por confirmar."
+        },
+        {
+          "id": "M02-004",
+          "nombre": "Cable de video por monitor",
+          "grupo": "Conexiones",
+          "cantidad": 3,
+          "unidad": "unidad",
+          "especificacion": "Interfaz por confirmar (HDMI, DisplayPort, DVI o VGA) según puertos de PC y monitores.",
+          "estado": "Por comprar",
+          "observacion": "No asumir el tipo de conector sin verificar los puertos."
+        },
+        {
+          "id": "M02-005",
+          "nombre": "Cable de alimentación por monitor",
+          "grupo": "Conexiones",
+          "cantidad": 3,
+          "unidad": "unidad",
+          "especificacion": "Cable de energía de cada monitor.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M02-006",
+          "nombre": "Multicontacto / regleta eléctrica",
+          "grupo": "Conexiones",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Distribución de alimentación para monitores y equipos.",
+          "estado": "Por comprar",
+          "observacion": "Capacidad y número de salidas por confirmar."
+        },
+        {
+          "id": "M02-007",
+          "nombre": "Extensión eléctrica",
+          "grupo": "Conexiones",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Extensión hacia la zona de la cabina.",
+          "estado": "Por comprar",
+          "observacion": "Longitud y calibre por confirmar."
+        },
+        {
+          "id": "M02-008",
+          "nombre": "Soporte o brazo de montaje de monitores",
+          "grupo": "Soporte y fijación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Soporte para fijar los tres monitores al panel.",
+          "estado": "Por comprar",
+          "observacion": "Diseño según la estructura de la cabina."
+        },
+        {
+          "id": "M02-009",
+          "nombre": "Tornillería y anclaje para soportes",
+          "grupo": "Soporte y fijación",
+          "cantidad": null,
+          "unidad": "juego",
+          "especificacion": "Tornillos, tuercas y anclajes.",
+          "estado": "Por comprar",
+          "observacion": "Medidas por definir según el soporte."
+        },
+        {
+          "id": "M02-010",
+          "nombre": "Adaptador de video",
+          "grupo": "Conexiones",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Convertidor entre interfaces si los puertos no coinciden.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Comprar solo si se confirma la necesidad."
+        },
+        {
+          "id": "M02-011",
+          "nombre": "Carta / patrón de prueba de color y grilla",
+          "grupo": "Pruebas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Imagen de prueba para verificar cada pantalla.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Puede ser una imagen o software; por confirmar."
+        },
+        {
+          "id": "M02-012",
+          "nombre": "Multímetro digital",
+          "grupo": "Herramientas",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Para verificar alimentación y continuidad.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M02-013",
+          "nombre": "Cinta aislante y bridas",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Para organización del cableado.",
+          "estado": "Por comprar",
+          "observacion": ""
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "nombre": "Electrónica, control, sensorización, distribución eléctrica y cableado",
+      "descripcion": "Electrónica de control y sensores: Arduino Mega, Teensy (opcional), sensores, potenciómetros, interruptores, botones, displays de 7 segmentos, componentes pasivos y activos, alimentación, protecciones, cableado y herramientas. Los valores se determinan por el diseño eléctrico, no por estimación.",
+      "items": [
+        {
+          "id": "M03-001",
+          "nombre": "Arduino Mega 2560",
+          "grupo": "Microcontroladores",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "ATmega2560 · 54 pines digitales (15 PWM) · 16 analógicas · 4 UART.",
+          "estado": "Por comprar",
+          "observacion": "Corriente por pin ~20 mA recomendado / 40 mA máx.; cargas mayores requieren driver o fuente externa."
+        },
+        {
+          "id": "M03-002",
+          "nombre": "Teensy (placa opcional)",
+          "grupo": "Microcontroladores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Modelo por definir; se evalúa solo si Arduino Mega no cubre las necesidades.",
+          "estado": "Pendiente de verificar",
+          "observacion": "No se da por requerido; decidir tras el diseño de entradas/salidas."
+        },
+        {
+          "id": "M03-003",
+          "nombre": "Módulo shield / expansión",
+          "grupo": "Microcontroladores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Tarjeta de expansión si las conexiones lo exigen.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-004",
+          "nombre": "Potenciómetro rotativo (ejes de mandos)",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Valor y tipo (p. ej. 10 kΩ lineal) por confirmar según el mando.",
+          "estado": "Por comprar",
+          "observacion": "Confirmar recorrido y valor por mando."
+        },
+        {
+          "id": "M03-005",
+          "nombre": "Potenciómetro deslizante (palancas)",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Valor y recorrido por confirmar.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-006",
+          "nombre": "Sensor de posición / encoder",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Tipo por definir según la señal requerida.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-007",
+          "nombre": "Final de carrera / microinterruptor",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para detección de posición de tren, flaps o topes.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-008",
+          "nombre": "Interruptores de palanca (toggle)",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Cantidad y número de posiciones por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-009",
+          "nombre": "Botones pulsadores",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Cantidad por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-010",
+          "nombre": "Interruptor rotativo / selector",
+          "grupo": "Sensores y entradas",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Si se requiere para modos; por confirmar.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-011",
+          "nombre": "Resistencias (surtido)",
+          "grupo": "Componentes pasivos",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Valores y potencia por calcular según cada circuito.",
+          "estado": "Por comprar",
+          "observacion": "No asignar valores sin el cálculo del circuito."
+        },
+        {
+          "id": "M03-012",
+          "nombre": "Condensadores cerámicos",
+          "grupo": "Componentes pasivos",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Valores por calcular (desacople y filtrado).",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-013",
+          "nombre": "Condensadores electrolíticos",
+          "grupo": "Componentes pasivos",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Valores por calcular (alimentación y filtrado).",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-014",
+          "nombre": "Diodos de protección / rectificadores",
+          "grupo": "Componentes activos",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Tipo (p. ej. 1N4007) y cantidad por calcular.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-015",
+          "nombre": "Transistores de conmutación / driver",
+          "grupo": "Componentes activos",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Tipo (p. ej. 2N2222 u otro driver) por calcular según la carga.",
+          "estado": "Por comprar",
+          "observacion": "Seleccionar conforme a corriente y tensión de carga."
+        },
+        {
+          "id": "M03-016",
+          "nombre": "Regulador de voltaje / convertidor DC-DC",
+          "grupo": "Componentes activos",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Tensión de entrada/salida por confirmar.",
+          "estado": "Por comprar",
+          "observacion": "Dimensionar según fuentes y consumo."
+        },
+        {
+          "id": "M03-017",
+          "nombre": "Display de 7 segmentos",
+          "grupo": "Indicadores y actuadores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Cantidad, tamaño y driver por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-018",
+          "nombre": "LED indicadores",
+          "grupo": "Indicadores y actuadores",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Colores y corriente por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-019",
+          "nombre": "Servo / actuador",
+          "grupo": "Indicadores y actuadores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Solo si un mando lo requiere; por confirmar.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-020",
+          "nombre": "Fuente de alimentación regulada",
+          "grupo": "Alimentación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Tensión y corriente por calcular según la carga total.",
+          "estado": "Por comprar",
+          "observacion": "Dimensionar con margen; balancear las cargas."
+        },
+        {
+          "id": "M03-021",
+          "nombre": "Fuente o conversor USB para Arduino",
+          "grupo": "Alimentación",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Alimentación de la placa; tipo por confirmar.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-022",
+          "nombre": "Regleta de distribución (bornes)",
+          "grupo": "Alimentación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para repartir alimentación a los ramales.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-023",
+          "nombre": "Barra o borne de tierra común",
+          "grupo": "Alimentación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Punto único de referencia de tierra.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-024",
+          "nombre": "Fusibles (surtido de valores)",
+          "grupo": "Protecciones",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Valor por ramal por calcular.",
+          "estado": "Por comprar",
+          "observacion": "No usar un valor mayor al que soporta el conductor."
+        },
+        {
+          "id": "M03-025",
+          "nombre": "Portafusibles",
+          "grupo": "Protecciones",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Soportes para los fusibles.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-026",
+          "nombre": "Breaker / interruptor de protección",
+          "grupo": "Protecciones",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Si se requiere protección rearmable; por confirmar.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-027",
+          "nombre": "Cable Ethernet (p. ej. Steren) para señales de control",
+          "grupo": "Cableado",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Conductores internos para señales de control de baja corriente.",
+          "estado": "Por comprar",
+          "observacion": "No usar los hilos para cargas de potencia sin el cálculo correspondiente."
+        },
+        {
+          "id": "M03-028",
+          "nombre": "Cable de alimentación (potencia)",
+          "grupo": "Cableado",
+          "cantidad": null,
+          "unidad": "metro",
+          "especificacion": "Calibre AWG por calcular según carga, corriente y longitud.",
+          "estado": "Por comprar",
+          "observacion": "Registrar AWG y longitud estimada por tramo."
+        },
+        {
+          "id": "M03-029",
+          "nombre": "Cable de señal blindado",
+          "grupo": "Cableado",
+          "cantidad": null,
+          "unidad": "metro",
+          "especificacion": "Blindaje y conexión a tierra por definir.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-030",
+          "nombre": "Terminales de crimpado",
+          "grupo": "Conectores y terminales",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Tipo (hembra/macho, ojal) por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-031",
+          "nombre": "Conectores desmontables",
+          "grupo": "Conectores y terminales",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para puntos que requieren mantenimiento o reemplazo.",
+          "estado": "Por comprar",
+          "observacion": "Señales soldadas salvo donde se requiera desconectar."
+        },
+        {
+          "id": "M03-032",
+          "nombre": "Bornera / clemas de conexión",
+          "grupo": "Conectores y terminales",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Conexión de cableado en tablero.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-033",
+          "nombre": "Cautín / soldador de estaño",
+          "grupo": "Herramientas de soldadura",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Soldador de punta fina.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-034",
+          "nombre": "Estaño para soldar (carrete)",
+          "grupo": "Herramientas de soldadura",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Aleación y diámetro por confirmar.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-035",
+          "nombre": "Flux / pasta para soldar",
+          "grupo": "Herramientas de soldadura",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Fundente para mejorar la soldadura.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-036",
+          "nombre": "Malla desoldadora / extractor de estaño",
+          "grupo": "Herramientas de soldadura",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para correcciones y retrabajo.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-037",
+          "nombre": "Multímetro digital",
+          "grupo": "Herramientas de medición",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Medición de tensión, corriente, continuidad y resistencia.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-038",
+          "nombre": "Pinza amperimétrica",
+          "grupo": "Herramientas de medición",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Solo si se requiere medir corriente sin abrir el circuito.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-039",
+          "nombre": "Protoboard (breadboard)",
+          "grupo": "Prototipado",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para prototipos antes del armado definitivo.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-040",
+          "nombre": "Cables puente (jumpers)",
+          "grupo": "Prototipado",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Para conexiones temporales en protoboard.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-041",
+          "nombre": "Cinta aislante",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Aislamiento de conexiones.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-042",
+          "nombre": "Tubo termocontráctil (heat shrink)",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Diversos diámetros.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-043",
+          "nombre": "Bridas / abrazaderas para cables",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Organización y fijación del arnés.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M03-044",
+          "nombre": "Grommets / pasacables de protección",
+          "grupo": "Consumibles",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Protección del cableado en bordes y paneles.",
+          "estado": "Por comprar",
+          "observacion": ""
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "nombre": "Computación, simulación, aviónica virtual e interfaces",
+      "descripcion": "Computadora, software, licencias, integración con X-Plane 12, joystick y hardware de interfaz, panel de autopiloto (CRS, HDG, FD, AP, ALT, VS, ILS, BC), arranque de dos motores, iluminación LED de cabina y audio del simulador. Las herramientas se verifican antes de fijarse como arquitectura definitiva.",
+      "items": [
+        {
+          "id": "M04-001",
+          "nombre": "Computadora de simulación (PC)",
+          "grupo": "Computación",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Especificaciones por definir según requisitos de X-Plane 12.",
+          "estado": "Por comprar",
+          "observacion": "Verificar requisitos mínimos/recomendados de X-Plane 12."
+        },
+        {
+          "id": "M04-002",
+          "nombre": "Tarjeta gráfica / salida multi-monitor",
+          "grupo": "Computación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Capacidad de tres salidas de video por confirmar.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Confirmar si la PC admite los tres monitores o requiere adaptador."
+        },
+        {
+          "id": "M04-003",
+          "nombre": "X-Plane 12",
+          "grupo": "Software y licencias",
+          "cantidad": 1,
+          "unidad": "licencia",
+          "especificacion": "Versión, requisitos y licencia por verificar.",
+          "estado": "Por comprar",
+          "observacion": "Confirmar versión y términos de licencia antes de adquirir."
+        },
+        {
+          "id": "M04-004",
+          "nombre": "Arduino IDE",
+          "grupo": "Software y licencias",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Herramienta gratuita de programación; versión por confirmar.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Verificar versión compatible con las placas."
+        },
+        {
+          "id": "M04-005",
+          "nombre": "MobiFlight",
+          "grupo": "Software y licencias",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Herramienta de interfaz; compatibilidad y necesidad por verificar.",
+          "estado": "Pendiente de verificar",
+          "observacion": "No se asume requerido ni compatible sin verificación."
+        },
+        {
+          "id": "M04-006",
+          "nombre": "XPLDirect / XPL Pro",
+          "grupo": "Software y licencias",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Puente de comunicación con X-Plane; usar uno según lo verificado.",
+          "estado": "Pendiente de verificar",
+          "observacion": "No duplicar software sin confirmar la arquitectura."
+        },
+        {
+          "id": "M04-007",
+          "nombre": "Joystick / yoke USB",
+          "grupo": "Interfaces y control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Mando de vuelo; modelo y compatibilidad por confirmar.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-008",
+          "nombre": "Pedales USB",
+          "grupo": "Interfaces y control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Pedales adicionales si los mandos originales no se sensorizan.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-009",
+          "nombre": "Hub USB",
+          "grupo": "Interfaces y control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para concentrar los mandos y controladores.",
+          "estado": "Por comprar",
+          "observacion": "Con alimentación si las cargas lo requieren."
+        },
+        {
+          "id": "M04-010",
+          "nombre": "Cables USB",
+          "grupo": "Interfaces y control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Conexión de mandos y controladores a la PC.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-011",
+          "nombre": "Panel de autopiloto (físico)",
+          "grupo": "Autopiloto",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Controles CRS, HDG, FD, AP, ALT, VS, ILS, BC.",
+          "estado": "Por comprar",
+          "observacion": "Puede construirse con interruptores, encoders y displays."
+        },
+        {
+          "id": "M04-012",
+          "nombre": "Encoders / potenciómetros de autopiloto",
+          "grupo": "Autopiloto",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para CRS, HDG, ALT y VS; tipo por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-013",
+          "nombre": "Botones de modo de autopiloto",
+          "grupo": "Autopiloto",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "FD, AP, ALT, VS, ILS, BC.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-014",
+          "nombre": "Display de 7 segmentos para autopiloto",
+          "grupo": "Autopiloto",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para mostrar CRS, HDG y ALT; cantidad por definir.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-015",
+          "nombre": "Interruptores de 2/3 posiciones (arranque de motores)",
+          "grupo": "Encendido de motores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Para simular el arranque de dos motores.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-016",
+          "nombre": "Botones de arranque de motor",
+          "grupo": "Encendido de motores",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Pulsadores del proceso de arranque.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-017",
+          "nombre": "Luces LED de cabina",
+          "grupo": "Audio e iluminación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Iluminación LED independiente de la cabina.",
+          "estado": "Por comprar",
+          "observacion": "Tensión y consumo por confirmar."
+        },
+        {
+          "id": "M04-018",
+          "nombre": "Driver / dimmer de LED",
+          "grupo": "Audio e iluminación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Control de intensidad si se requiere.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-019",
+          "nombre": "Altavoces (bocinas) del simulador",
+          "grupo": "Audio e iluminación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Sonido claro y con volumen suficiente.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-020",
+          "nombre": "Amplificador de audio",
+          "grupo": "Audio e iluminación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Solo si los altavoces lo requieren.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-021",
+          "nombre": "Cables y conectores de audio",
+          "grupo": "Audio e iluminación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Conexión de audio entre PC y altavoces.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-022",
+          "nombre": "Interfaz de comunicación con X-Plane",
+          "grupo": "Interfaces y control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Protocolo y DataRefs/Commands por verificar.",
+          "estado": "Pendiente de verificar",
+          "observacion": "Diseñar según lo que X-Plane 12 soporta realmente."
+        },
+        {
+          "id": "M04-023",
+          "nombre": "Licencia / activación de software adicional",
+          "grupo": "Software y licencias",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Software complementario solo si se confirma necesario.",
+          "estado": "Pendiente de verificar",
+          "observacion": ""
+        },
+        {
+          "id": "M04-024",
+          "nombre": "Destornilladores y herramientas menores",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "juego",
+          "especificacion": "Para montaje de la PC y los mandos.",
+          "estado": "Por comprar",
+          "observacion": ""
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "nombre": "Visualización e iluminación exterior",
+      "descripcion": "Solo la luz de baliza (beacon) exterior y los materiales para su alimentación, control, instalación, cableado, protección y prueba. No se declaran requisitos de aeronavegabilidad; es un simulador terrestre.",
+      "items": [
+        {
+          "id": "M05-001",
+          "nombre": "Luz de baliza exterior (beacon)",
+          "grupo": "Iluminación exterior",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Baliza roja para simulador terrestre (sin certificación).",
+          "estado": "Por comprar",
+          "observacion": "Tensión y tipo por confirmar."
+        },
+        {
+          "id": "M05-002",
+          "nombre": "Fuente / adaptador de la baliza",
+          "grupo": "Alimentación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Tensión y corriente por confirmar según la lámpara.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-003",
+          "nombre": "Interruptor / control de encendido de la baliza",
+          "grupo": "Control",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Encendido y apagado de la baliza.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-004",
+          "nombre": "Cableado de alimentación de la baliza",
+          "grupo": "Cableado",
+          "cantidad": null,
+          "unidad": "metro",
+          "especificacion": "Calibre por calcular según carga y distancia.",
+          "estado": "Por comprar",
+          "observacion": "Registrar AWG y longitud estimada."
+        },
+        {
+          "id": "M05-005",
+          "nombre": "Fusible de protección del circuito",
+          "grupo": "Protección",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Valor por calcular según la carga.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-006",
+          "nombre": "Soporte y fijación de la baliza",
+          "grupo": "Instalación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Fijación a la estructura exterior.",
+          "estado": "Por comprar",
+          "observacion": "Diseño según la ubicación de montaje."
+        },
+        {
+          "id": "M05-007",
+          "nombre": "Sello / junta contra intemperie",
+          "grupo": "Instalación",
+          "cantidad": null,
+          "unidad": "unidad",
+          "especificacion": "Protección de la instalación exterior.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-008",
+          "nombre": "Conectores y terminales",
+          "grupo": "Instalación",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Conexión del circuito de la baliza.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-009",
+          "nombre": "Multímetro digital",
+          "grupo": "Herramientas",
+          "cantidad": 1,
+          "unidad": "unidad",
+          "especificacion": "Verificación del circuito de la baliza.",
+          "estado": "Por comprar",
+          "observacion": ""
+        },
+        {
+          "id": "M05-010",
+          "nombre": "Cinta aislante y termocontráctil",
+          "grupo": "Herramientas",
+          "cantidad": null,
+          "unidad": "paquete",
+          "especificacion": "Aislamiento y protección de conexiones.",
+          "estado": "Por comprar",
+          "observacion": ""
+        }
+      ]
+    }
+  ],
+  "estados_material": [
+    "Existente",
+    "Recuperable",
+    "Por reparar",
+    "Por comprar",
+    "Pendiente de verificar"
+  ],
+  "gobernanza": {
+    "titulo": "Responsables",
+    "intro": "Estructura de responsabilidades, roles, perfil de liderazgo y reglas para conformar equipos del Proyecto AATD DC3.",
+    "estructura": {
+      "titulo": "Estructura de responsabilidades",
+      "niveles": [
+        {
+          "nivel": "Dirección",
+          "miembros": [
+            {
+              "nombre": "Haniel Fierros",
+              "cargo": "CEO Eben Ezer Aviation"
+            }
+          ]
+        },
+        {
+          "nivel": "Gestión y revisión",
+          "miembros": [
+            {
+              "nombre": "Misael Ramos",
+              "cargo": "Ingeniería de Operaciones"
+            },
+            {
+              "nombre": "Roxana Méndez",
+              "cargo": "Supervisor de Planeación"
+            }
+          ]
+        },
+        {
+          "nivel": "Ejecución",
+          "miembros": [
+            {
+              "nombre": "",
+              "cargo": "Líderes de equipo"
+            }
+          ]
+        }
+      ],
+      "apoyo": {
+        "titulo": "Apoyo técnico",
+        "miembros": [
+          {
+            "nombre": "",
+            "cargo": "Profesores del IPN"
+          }
+        ]
+      }
+    },
+    "roles": [
+      {
+        "id": "ceo",
+        "icono": "👔",
+        "nombre": "Haniel Fierros",
+        "cargo": "CEO Eben Ezer Aviation",
+        "organizacion": "Eben Ezer Aviation",
+        "rol": "Patrocinador principal y responsable general del proyecto",
+        "resumen": "Dirige la dirección general del proyecto, la coordinación de recursos y la autorización; es el enlace principal entre EEA y el IPN.",
+        "responsabilidades": [
+          "Dirigir la dirección general del proyecto, la coordinación de recursos y la autorización del proyecto.",
+          "Actuar como enlace principal entre EEA y el IPN.",
+          "Coordinar a las partes participantes y resolver los asuntos que requieran decisión de la dirección.",
+          "Aprobar la ejecución general del proyecto y los asuntos relevantes.",
+          "Revisar y tomar las decisiones finales de aceptación/aprobación."
+        ],
+        "limite": "Aprobación final de la entrega general del proyecto. El trabajo técnico específico recibe el apoyo profesional de los responsables correspondientes y de los profesores del IPN.",
+        "entregables": [
+          "Decisión final de aceptación/aprobación del proyecto."
+        ],
+        "reporta_a": "— (máxima autoridad del proyecto)",
+        "comunica_con": [
+          "EEA",
+          "IPN",
+          "Equipos del proyecto"
+        ]
+      },
+      {
+        "id": "ingenieria-operaciones",
+        "icono": "🔎",
+        "nombre": "Misael Ramos",
+        "cargo": "Ingeniería de Operaciones",
+        "organizacion": "Eben Ezer Aviation",
+        "rol": "Responsable de calidad, documentación técnica y revisión de entregables; principal colaborador del CEO",
+        "resumen": "Revisa los resultados, manuales, documentos de entrega y expedientes; audita la evidencia y da seguimiento a las correcciones.",
+        "responsabilidades": [
+          "Revisar los resultados finales del proyecto, los manuales, los documentos de entrega y los expedientes de responsabilidades del personal.",
+          "Revisar los registros del proyecto, la evidencia de ejecución y las auditorías relacionadas.",
+          "Verificar la integridad, consistencia y trazabilidad de los entregables.",
+          "Cuando se detecten defectos, plantear requisitos de corrección y dar seguimiento hasta su cierre.",
+          "Reportar al CEO los resultados de la revisión y los asuntos relevantes."
+        ],
+        "limite": "No sustituye la autoridad de aprobación final del proyecto del CEO.",
+        "entregables": [
+          "Informe de revisión/auditoría.",
+          "Requisitos de corrección con seguimiento."
+        ],
+        "reporta_a": "CEO (Haniel Fierros)",
+        "comunica_con": [
+          "CEO",
+          "Supervisor de Planeación",
+          "Líderes de equipo"
+        ]
+      },
+      {
+        "id": "supervisor-planeacion",
+        "icono": "📋",
+        "nombre": "Roxana Méndez",
+        "cargo": "Supervisor de Planeación",
+        "organizacion": "Eben Ezer Aviation",
+        "rol": "Responsable de la planeación, el avance y la coordinación entre equipos del proyecto",
+        "resumen": "Supervisa la ejecución, mantiene el cronograma Gantt y coordina las prioridades y el trabajo entre equipos.",
+        "responsabilidades": [
+          "Supervisar que los equipos ejecuten conforme a objetivos, tiempos y plan.",
+          "Mantener y actualizar el cronograma Gantt del proyecto.",
+          "Recibir de todos los líderes de equipo los reportes de avance, el estado de las tareas, las necesidades de recursos, los riesgos y las fechas estimadas de término.",
+          "Identificar desviaciones de avance, dependencias entre tareas y riesgos de retraso.",
+          "Coordinar prioridades y la organización del trabajo entre equipos.",
+          "Reportar periódicamente al CEO el avance general y plantear los asuntos que requieran decisión."
+        ],
+        "limite": "Los líderes de equipo deben entregarle oportunamente información de avance veraz y verificable.",
+        "entregables": [
+          "Cronograma Gantt actualizado.",
+          "Reporte de avance general para el CEO."
+        ],
+        "reporta_a": "CEO (Haniel Fierros)",
+        "comunica_con": [
+          "Líderes de equipo",
+          "CEO",
+          "Ingeniería de Operaciones"
+        ]
+      },
+      {
+        "id": "profesores-ipn",
+        "icono": "🎓",
+        "nombre": "",
+        "cargo": "Profesores del IPN",
+        "organizacion": "IPN",
+        "rol": "Orientación profesional y supervisión técnica",
+        "resumen": "Brindan orientación técnica en sus áreas de especialidad y apoyan la confirmación de métodos, estándares y pruebas.",
+        "responsabilidades": [
+          "Brindar orientación a los estudiantes en sus respectivas áreas de especialidad.",
+          "Colaborar en la confirmación de métodos de trabajo, estándares técnicos, pasos de operación y seguridad técnica.",
+          "Revisar, cuando sea necesario, el diseño, el plan de implementación, los métodos de prueba y los resultados.",
+          "Orientar a los estudiantes para detectar, analizar y corregir problemas técnicos.",
+          "Aportar recomendaciones profesionales; los asuntos de alcance del proyecto, recursos o aprobación final se escalan según el proceso de gestión."
+        ],
+        "limite": "No se asume que los profesores asuman la gestión de planeación interna de EEA ni la responsabilidad de aprobación final del proyecto.",
+        "entregables": [
+          "Orientación y recomendaciones técnicas."
+        ],
+        "reporta_a": "— (asesoría técnica; sin línea de mando del proyecto)",
+        "comunica_con": [
+          "Estudiantes",
+          "Líderes de equipo"
+        ]
+      },
+      {
+        "id": "lideres-equipo",
+        "icono": "🧑‍💼",
+        "nombre": "",
+        "cargo": "Líderes de equipo",
+        "organizacion": "Equipos del proyecto",
+        "rol": "Responsables de la ejecución de cada grupo de trabajo",
+        "resumen": "Responsables de las tareas, calidad, avance y entregables del equipo; coordinan a sus integrantes y reportan a Planeación.",
+        "responsabilidades": [
+          "Ser responsable de las tareas, la calidad, el avance y los entregables asignados al equipo.",
+          "Organizar la descomposición de tareas y definir los pasos de ejecución y los objetivos por etapa.",
+          "Seleccionar a los integrantes del equipo; el equipo tiene un máximo de cinco personas en total, incluyendo al líder.",
+          "Distribuir el trabajo de forma razonable, dar seguimiento a las tareas de los integrantes y revisar los resultados.",
+          "Investigar y confirmar, antes de ejecutar, los métodos técnicos, las herramientas, los materiales y el proceso de implementación correctos.",
+          "Elaborar y presentar reportes de avance, registros de trabajo, listas de problemas, necesidades de recursos y fechas estimadas de término.",
+          "Presentar al Supervisor de Planeación el avance, las necesidades, los riesgos y las alertas de retraso, para actualizar el Gantt.",
+          "Comunicarse con los profesores del IPN ante problemas técnicos.",
+          "Comunicarse con Roxana, Misael y el CEO según la naturaleza del asunto; escalar los cambios relevantes de alcance, recursos críticos, conflictos o aprobación final.",
+          "Garantizar la continuidad del trabajo del equipo, la integridad de la información y la transferencia de conocimiento.",
+          "Asegurar que las necesidades de materiales, herramientas y recursos se identifiquen con anticipación; no ocultar faltantes ni comprometer compras por cuenta propia sin autorización.",
+          "Dirigir al equipo con buen liderazgo, colaboración justa, sentido de responsabilidad y comunicación efectiva."
+        ],
+        "limite": "No tienen autorización para gastar ni para comprometer compras por cuenta propia; las necesidades se identifican, estiman y coordinan según el proceso de EEA.",
+        "entregables": [
+          "Reportes de avance y registros de trabajo.",
+          "Listas de problemas y necesidades de recursos.",
+          "Fechas estimadas de término."
+        ],
+        "reporta_a": "Supervisor de Planeación (Roxana Méndez)",
+        "comunica_con": [
+          "Supervisor de Planeación",
+          "Profesores del IPN",
+          "Ingeniería de Operaciones",
+          "CEO"
+        ]
+      }
+    ],
+    "perfil_lider": {
+      "titulo": "Perfil del líder de equipo",
+      "descripcion": "Criterios de selección del líder de cada equipo.",
+      "criterios": [
+        "Liderazgo y responsabilidad.",
+        "Comunicación clara y respetuosa.",
+        "Planeación, organización y seguimiento.",
+        "Delegación y coordinación de personas.",
+        "Resolución de problemas y toma de decisiones.",
+        "Capacidad para investigar y aprender procedimientos técnicos.",
+        "Trabajo en equipo y colaboración interdisciplinaria.",
+        "Cumplimiento de plazos y documentación.",
+        "Gestión de recursos, materiales y riesgos.",
+        "Continuidad operativa y transferencia de conocimientos."
+      ],
+      "frase": "Un líder no necesita saber hacerlo todo; debe saber organizar, investigar, consultar a los especialistas, delegar y asegurar que el trabajo se complete correctamente."
+    },
+    "reglas_equipos": {
+      "titulo": "Reglas para conformar equipos",
+      "reglas": [
+        "Cada equipo debe contar con un líder cuyo perfil sea adecuado para las responsabilidades asignadas.",
+        "Cada equipo debe tener acceso a por lo menos una laptop funcional para sus actividades.",
+        "Cada líder seleccionará su equipo, con un máximo de cinco integrantes en total, incluyendo al líder: cuatro integrantes adicionales como máximo.",
+        "Un líder puede participar también como integrante de un equipo dirigido por otro líder, siempre que se mantengan claras sus responsabilidades y no se comprometa el cumplimiento de sus funciones principales.",
+        "Cada equipo debe garantizar la continuidad de sus actividades durante todo el proyecto, incluyendo documentación, respaldos y transferencia de conocimientos.",
+        "Cada líder debe identificar y justificar los recursos financieros necesarios para las actividades asignadas, elaborar estimaciones y coordinar las necesidades de recursos. No implica autorización para gastar ni obligación de financiar personalmente el proyecto.",
+        "El IPN podrá aportar parte de los materiales. La disponibilidad real debe verificarse y coordinarse con el CEO antes de decidir qué materiales se comprarán. Se debe consultar el inventario existente y evitar compras duplicadas."
+      ],
+      "nota": "La regla 6 no debe interpretarse como que el líder debe pagar de su bolsillo. Su responsabilidad es planear, estimar, declarar y coordinar las necesidades de fondos y materiales; la aprobación real de fondos se ejecuta según el proceso de gestión del proyecto de EEA."
+    },
+    "comunicacion": {
+      "titulo": "Comunicación, reportes y escalamiento",
+      "flujo": [
+        {
+          "de": "Líderes de equipo",
+          "a": "Supervisor de Planeación (Roxana)",
+          "nota": "Avance, fechas estimadas y necesidades de recursos."
+        },
+        {
+          "de": "Supervisor de Planeación (Roxana)",
+          "a": "CEO (Haniel)",
+          "nota": "Reporte de avance general y asuntos que requieren decisión."
+        }
+      ],
+      "canales_especiales": [
+        {
+          "titulo": "Revisión de ingeniería, calidad, manuales y entrega",
+          "responsable": "Ingeniería de Operaciones (Misael)"
+        },
+        {
+          "titulo": "Consulta técnica especializada",
+          "responsable": "Profesores del IPN"
+        }
+      ],
+      "reglas": [
+        "Los líderes de equipo pueden plantear preguntas directamente a los profesores, a Roxana o al CEO, según la naturaleza del asunto.",
+        "El avance diario, las fechas estimadas de término y las necesidades de recursos se reportan de forma unificada a Roxana, para mantener el Gantt.",
+        "Los problemas técnicos se consultan de manera prioritaria con el profesor correspondiente del IPN.",
+        "La revisión de entregables, manuales, auditorías y asuntos de calidad se presentan a Misael.",
+        "El alcance del proyecto, los recursos relevantes, los conflictos entre equipos y la aprobación final se presentan al CEO.",
+        "Los riesgos de seguridad o técnicos relevantes y urgentes deben reportarse de inmediato, sin esperar el reporte rutinario.",
+        "La comunicación directa no sustituye el registro formal de avance; las decisiones importantes deben registrarse y notificarse a las personas correspondientes."
+      ]
+    },
+    "equipos_trabajo": {
+      "titulo": "Equipos de trabajo",
+      "intro": "Siete equipos iniciales del proyecto. Esta estructura es editable y puede ajustarse si la inspección real o el avance del proyecto lo requiere.",
+      "nota": "Los entregables deben verificarse mediante documentos, registros, pruebas o evidencias; no se declaran como ya existentes.",
+      "relaciones_titulo": "Relaciones y colaboración principal",
+      "relaciones_nota": "Relaciones principales de colaboración. Las dependencias específicas y sus fechas se confirmarán durante la planeación con el Supervisor de Planeación.",
+      "relaciones": [
+        {
+          "de": "Supervisión y Planeación",
+          "a": "Todos los equipos",
+          "tipo": "Coordinación y seguimiento"
+        },
+        {
+          "de": "Limpieza y acondicionamiento",
+          "a": "Mecánica y mandos físicos",
+          "tipo": "Cabina preparada"
+        },
+        {
+          "de": "Limpieza y acondicionamiento",
+          "a": "Aviónica e instrumentación",
+          "tipo": "Zona limpia"
+        },
+        {
+          "de": "Mecánica y mandos físicos",
+          "a": "Electrónica y sensorización",
+          "tipo": "Mandos físicos adaptados"
+        },
+        {
+          "de": "Electrónica y sensorización",
+          "a": "Software e integración",
+          "tipo": "Señales y cableado"
+        },
+        {
+          "de": "Aviónica e instrumentación",
+          "a": "Software e integración",
+          "tipo": "Instrumentos e interfaces"
+        },
+        {
+          "de": "Software e integración",
+          "a": "Simulación y validación operativa",
+          "tipo": "Integración lista para pruebas"
+        }
+      ],
+      "equipos": [
+        {
+          "id": "limpieza",
+          "icono": "🧹",
+          "nombre": "Limpieza y acondicionamiento",
+          "responsabilidades": [
+            "Inspección inicial de la cabina.",
+            "Limpieza profunda de la cabina.",
+            "Retiro controlado de residuos.",
+            "Limpieza de superficies.",
+            "Identificación de corrosión.",
+            "Preparación de la cabina para trabajos posteriores."
+          ],
+          "actividades": [
+            "Realizar la inspección inicial y el diagnóstico de riesgos (biológicos/químicos).",
+            "Desmontar de forma controlada los elementos que lo requieran.",
+            "Limpiar y sanitizar las superficies de la cabina.",
+            "Retirar y clasificar los residuos de forma controlada.",
+            "Identificar y reportar las zonas con corrosión.",
+            "Preparar y proteger la cabina para las siguientes etapas."
+          ],
+          "entregables": [
+            "Registro fotográfico inicial y final.",
+            "Lista de daños y faltantes.",
+            "Registro de limpieza.",
+            "Reporte de condiciones y necesidades de reparación."
+          ],
+          "dependencias": [
+            "Entrega la cabina preparada a Mecánica y mandos físicos y a Aviónica e instrumentación.",
+            "Recibe lineamientos y prioridades de Supervisión y Planeación."
+          ],
+          "perfil_lider": [
+            "Organización del trabajo en sitio y manejo de residuos.",
+            "Atención al detalle y documentación (registros fotográficos y listas)."
+          ],
+          "nota": ""
+        },
+        {
+          "id": "supervision-planeacion",
+          "icono": "🗓️",
+          "nombre": "Supervisión y Planeación",
+          "responsabilidades": [
+            "Coordinación de actividades.",
+            "Seguimiento de avances.",
+            "Recopilación de estimados de entrega.",
+            "Identificación de dependencias, riesgos y necesidades de recursos.",
+            "Actualización del Gantt bajo la dirección de Roxana Méndez."
+          ],
+          "actividades": [
+            "Coordinar las actividades entre los equipos.",
+            "Dar seguimiento a los avances y recopilar estimados de entrega.",
+            "Identificar dependencias, riesgos y necesidades de recursos.",
+            "Mantener actualizado el cronograma Gantt."
+          ],
+          "entregables": [
+            "Cronograma actualizado.",
+            "Reportes de avance.",
+            "Registro de riesgos.",
+            "Lista de pendientes.",
+            "Solicitudes de recursos.",
+            "Seguimiento de acuerdos."
+          ],
+          "dependencias": [
+            "Coordina y da seguimiento a todos los equipos.",
+            "Reporta a Roxana Méndez, Supervisor de Planeación."
+          ],
+          "perfil_lider": [
+            "Planeación, organización y seguimiento.",
+            "Comunicación clara y manejo de cronograma y riesgos."
+          ],
+          "nota": "Este equipo apoya la planeación; no sustituye la responsabilidad de Roxana como Supervisor de Planeación."
+        },
+        {
+          "id": "avionica-instrumentacion",
+          "icono": "🖥️",
+          "nombre": "Aviónica e instrumentación",
+          "responsabilidades": [
+            "Definición e integración de instrumentos virtuales.",
+            "Panel de control y pantallas.",
+            "Controles de navegación y panel de piloto automático.",
+            "Todo según las funciones realmente compatibles con X-Plane 12."
+          ],
+          "actividades": [
+            "Definir los instrumentos virtuales y su distribución.",
+            "Integrar el panel de control y las pantallas.",
+            "Configurar los controles de navegación y el panel de piloto automático.",
+            "Verificar las funciones realmente compatibles con X-Plane 12."
+          ],
+          "entregables": [
+            "Inventario de instrumentos e interfaces.",
+            "Mapa de controles.",
+            "Especificación funcional.",
+            "Pruebas de operación.",
+            "Documentación de integración."
+          ],
+          "dependencias": [
+            "Colabora con Software e integración para conectarse a X-Plane 12.",
+            "Coordina con Electrónica y sensorización el cableado de los controles."
+          ],
+          "perfil_lider": [
+            "Conocimiento de instrumentación y de integración con simulador.",
+            "Verificación de compatibilidad antes de asumir funciones."
+          ],
+          "nota": ""
+        },
+        {
+          "id": "mecanica-mandos",
+          "icono": "🔧",
+          "nombre": "Mecánica y mandos físicos",
+          "responsabilidades": [
+            "Inspección, recuperación, reparación y adaptación de mandos originales.",
+            "Volante/columna, pedales, timón, palancas, mecanismos y soportes físicos."
+          ],
+          "actividades": [
+            "Inspeccionar y recuperar los mandos originales.",
+            "Reparar los componentes dañados.",
+            "Adaptar los mandos y soportes físicos para la sensorización.",
+            "Documentar reparaciones y piezas faltantes."
+          ],
+          "entregables": [
+            "Inventario de componentes recuperables.",
+            "Registro de reparaciones.",
+            "Relación de piezas faltantes.",
+            "Evidencia de funcionamiento.",
+            "Reporte de aceptación mecánica."
+          ],
+          "dependencias": [
+            "Recibe la cabina preparada de Limpieza y acondicionamiento.",
+            "Entrega los mandos funcionales a Electrónica y sensorización."
+          ],
+          "perfil_lider": [
+            "Conocimientos de mecánica y fabricación.",
+            "Cuidado con estructuras y documentación de reparaciones."
+          ],
+          "nota": ""
+        },
+        {
+          "id": "software-integracion",
+          "icono": "💻",
+          "nombre": "Software e integración",
+          "responsabilidades": [
+            "Integración de X-Plane 12 con los microcontroladores, interfaces y controles físicos.",
+            "Configuración de software, desarrollo de lógica, pruebas de comunicación y gestión de versiones locales."
+          ],
+          "actividades": [
+            "Integrar X-Plane 12 con microcontroladores e interfaces.",
+            "Configurar el software y desarrollar la lógica.",
+            "Ejecutar pruebas de comunicación.",
+            "Gestionar las versiones locales del software."
+          ],
+          "entregables": [
+            "Arquitectura de software.",
+            "Configuración documentada.",
+            "Código fuente desarrollado.",
+            "Matriz de asignación de controles.",
+            "Resultados de pruebas.",
+            "Guía de recuperación."
+          ],
+          "dependencias": [
+            "Recibe mapas y hardware de Electrónica y de Aviónica.",
+            "Entrega la integración lista para Simulación y validación operativa."
+          ],
+          "perfil_lider": [
+            "Capacidad para investigar y verificar compatibilidad de herramientas.",
+            "Documentación y control de versiones."
+          ],
+          "nota": "No asumir compatibilidad entre herramientas sin verificarla."
+        },
+        {
+          "id": "electronica-sensorizacion",
+          "icono": "⚡",
+          "nombre": "Electrónica y sensorización",
+          "responsabilidades": [
+            "Diseño y montaje de circuitos con Arduino Mega y Teensy cuando proceda.",
+            "Selección de sensores, potenciómetros, interruptores, cableado, alimentación independiente, filtros y acondicionamiento de señales."
+          ],
+          "actividades": [
+            "Diseñar y montar los circuitos con Arduino Mega y, cuando proceda, Teensy.",
+            "Seleccionar sensores, potenciómetros e interruptores.",
+            "Tender el cableado y la alimentación independiente.",
+            "Implementar filtros y acondicionamiento de señales."
+          ],
+          "entregables": [
+            "Diagramas de conexión.",
+            "Lista de materiales validada.",
+            "Mapa de entradas/salidas.",
+            "Registro de calibración.",
+            "Pruebas eléctricas.",
+            "Documentación de cableado."
+          ],
+          "dependencias": [
+            "Recibe los mandos de Mecánica y mandos físicos.",
+            "Entrega señales y cableado a Software e integración."
+          ],
+          "perfil_lider": [
+            "Conocimientos de electrónica y seguridad eléctrica.",
+            "Validación de la lista de materiales sin asumir componentes no confirmados."
+          ],
+          "nota": "Priorizar protoboards y conexiones soldadas funcionales; no exigir fabricación de PCB."
+        },
+        {
+          "id": "simulacion-validacion",
+          "icono": "🛬",
+          "nombre": "Simulación y validación operativa",
+          "responsabilidades": [
+            "Ejecutar pruebas integrales en el simulador terrestre.",
+            "Comprobar respuesta de mandos, flaps, tren de aterrizaje, motores simulados, piloto automático, indicaciones, audio y visualización, según el alcance implementado."
+          ],
+          "actividades": [
+            "Ejecutar las pruebas integrales del simulador.",
+            "Comprobar la respuesta de mandos, flaps y tren de aterrizaje.",
+            "Verificar motores simulados, piloto automático e indicaciones.",
+            "Probar audio y visualización."
+          ],
+          "entregables": [
+            "Plan y protocolos de pruebas.",
+            "Listas de verificación.",
+            "Resultados reproducibles.",
+            "Registro de defectos.",
+            "Evidencias.",
+            "Reporte de aceptación funcional."
+          ],
+          "dependencias": [
+            "Recibe la integración de Software y Aviónica.",
+            "Reporta defectos a los equipos correspondientes."
+          ],
+          "perfil_lider": [
+            "Pruebas sistemáticas con criterios objetivos.",
+            "Registro de resultados y reporte de defectos."
+          ],
+          "nota": "Las pruebas se realizan en simulación terrestre; la aeronave real no volverá a volar."
+        }
+      ]
+    }
+  }
 }

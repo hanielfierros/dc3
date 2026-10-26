@@ -1,5 +1,5 @@
 Informe de pruebas - Plataforma AATD DC3
-Fecha: 2026-10-23T22:25:21.632185
+Fecha: 2026-10-26T13:25:32.026629
 ======================================================================
 
   [OK]   Estructura plana (sin subcarpetas) - subcarpetas: []
@@ -19,6 +19,18 @@ Fecha: 2026-10-23T22:25:21.632185
   [OK]   Prácticas: objetivo presente en todas - sin objetivo: []
   [OK]   Prácticas: PDF de cada práctica presente - faltantes: []
   [OK]   Sin IDs duplicados de órdenes de trabajo - duplicados: []
+  [OK]   Materiales: exactamente M01..M05 en orden - módulos: ['M01', 'M02', 'M03', 'M04', 'M05']
+  [OK]   Materiales: ítems con campos completos y estado válido - inválidos: []
+  [OK]   Materiales: sin IDs duplicados de ítem - duplicados: []
+  [OK]   Gobernanza: exactamente 5 roles - roles: ['ceo', 'ingenieria-operaciones', 'supervisor-planeacion', 'profesores-ipn', 'lideres-equipo']
+  [OK]   Gobernanza: roles con campos completos - inválidos: []
+  [OK]   Gobernanza: 10 criterios del perfil del líder
+  [OK]   Gobernanza: frase del perfil presente
+  [OK]   Gobernanza: 7 reglas para conformar equipos
+  [OK]   Gobernanza: reglas de comunicación presentes
+  [OK]   Equipos de trabajo: exactamente 7 en orden - ids: ['limpieza', 'supervision-planeacion', 'avionica-instrumentacion', 'mecanica-mandos', 'software-integracion', 'electronica-sensorizacion', 'simulacion-validacion']
+  [OK]   Equipos de trabajo: campos completos - inválidos: []
+  [OK]   Equipos de trabajo: relaciones de colaboración presentes
   [OK]   PDF Plan Maestro con firma válida - firma: b'%PDF-'
   [OK]   Codificación UTF-8 sin BOM ni mojibake - afectados: []
   [OK]   Manuales de equipo copiados (7)
@@ -27,4 +39,4 @@ Fecha: 2026-10-23T22:25:21.632185
   [OK]   Cronograma con 5+ categorías de complejidad - categorías: 5
   [OK]   Todas las OI tienen fecha y complejidad asignada - sin asignación: 0
 
-RESULTADO: 24 verificaciones, 24 OK, 0 errores -> CONFORME
+RESULTADO: 36 verificaciones, 36 OK, 0 errores -> CONFORME

@@ -23,6 +23,8 @@
     renderDiagramas();
     renderBiblioteca();
     renderGlosario();
+    renderMateriales();
+    renderResponsablesPage();
     configurarNav();
     configurarTema();
     configurarReloj();
@@ -83,7 +85,7 @@
   }
 
   function renderResponsables() {
-    $("#responsables").innerHTML = D.responsables.map(function (r) {
+    $("#responsables-home").innerHTML = D.responsables.map(function (r) {
       return '<div class="card"><h4>' + esc(r.nombre) + '</h4><p><strong>' + esc(r.rol) + '</strong></p><p>' + esc(r.cargo) + '</p></div>';
     }).join("");
   }
@@ -1061,12 +1063,297 @@
     pintar();
   }
 
+  /* ================= MATERIALES ================= */
+  var MAT_STORAGE_KEY = "aatd-materiales";
+  var EST_MAT_CLASE = {
+    "Existente": "existente",
+    "Recuperable": "recuperable",
+    "Por reparar": "reparar",
+    "Por comprar": "comprar",
+    "Pendiente de verificar": "pendiente"
+  };
+
+  function materialesLeer() {
+    var datos = {};
+    try { datos = JSON.parse(localStorage.getItem(MAT_STORAGE_KEY) || "{}") || {}; } catch (e) { datos = {}; }
+    return datos;
+  }
+  function materialesGuardar(datos) {
+    try { localStorage.setItem(MAT_STORAGE_KEY, JSON.stringify(datos)); } catch (e) {}
+  }
+
+  function renderMateriales() {
+    var mods = D.materiales || [];
+    var estados = D.estados_material || [];
+    var marcados = materialesLeer();
+    var cont = $("#materiales-contenido");
+    if (!cont) return;
+
+    var leyenda = $("#materiales-leyenda");
+    if (leyenda) {
+      leyenda.innerHTML = '<span class="leyenda-nota">Estado de cada material:</span>' +
+        estados.map(function (e) {
+          return '<span class="chip-resp chip-resp-leyenda"><span class="mat-punto ' +
+            (EST_MAT_CLASE[e] || "pendiente") + '"></span>' + esc(e) + "</span>";
+        }).join("");
+    }
+
+    function cantTexto(it) {
+      var c = it.cantidad;
+      if (c === null || c === undefined || c === "") return "Pendiente de verificar";
+      return c;
+    }
+
+    function filaItem(it) {
+      var marcado = !!marcados[it.id];
+      var cls = EST_MAT_CLASE[it.estado] || "pendiente";
+      return '<div class="mat-item' + (marcado ? " marcado" : "") + '">' +
+        '<label class="mat-check">' +
+        '<input type="checkbox" data-item="' + esc(it.id) + '"' + (marcado ? " checked" : "") +
+        ' aria-label="Marcar ' + esc(it.nombre) + '">' +
+        '<span class="mat-checkbox" aria-hidden="true"></span>' +
+        "</label>" +
+        '<div class="mat-cant"><span class="mat-cant-val">' + esc(String(cantTexto(it))) +
+        '</span><span class="mat-cant-unidad">' + esc(it.unidad) + "</span></div>" +
+        '<div class="mat-datos">' +
+        '<div class="mat-nombre">' + esc(it.nombre) + "</div>" +
+        (it.especificacion ? '<div class="mat-spec">' + esc(it.especificacion) + "</div>" : "") +
+        (it.observacion ? '<div class="mat-obs">' + esc(it.observacion) + "</div>" : "") +
+        "</div>" +
+        '<span class="mat-estado mat-est-' + cls + '">' + esc(it.estado) + "</span>" +
+        "</div>";
+    }
+
+    function pintarModulo(m) {
+      var items = m.items || [];
+      var grupos = {}, orden = [];
+      items.forEach(function (it) {
+        var g = it.grupo || "General";
+        if (!grupos[g]) { grupos[g] = []; orden.push(g); }
+        grupos[g].push(it);
+      });
+      var body = orden.map(function (g) {
+        return '<div class="mat-grupo"><div class="mat-grupo-titulo">' + esc(g) + "</div>" +
+          grupos[g].map(filaItem).join("") + "</div>";
+      }).join("");
+      var marcadosMod = items.filter(function (it) { return !!marcados[it.id]; }).length;
+      var pct = items.length ? Math.round(100 * marcadosMod / items.length) : 0;
+      return '<div class="acordeon mat-modulo' + (pct === 100 ? " completo" : "") +
+        '" data-modulo="' + esc(m.id) + '">' +
+        '<button class="acordeon-cabecera" type="button" data-acordeon>' +
+        '<span class="mat-mod-titulo"><span class="mat-mod-codigo">' + esc(m.id) + "</span> " + esc(m.nombre) + "</span>" +
+        '<span class="mat-mod-meta"><span class="mat-mod-cont">' + marcadosMod + " / " + items.length +
+        '</span><span class="mat-mod-pct">' + pct + '%</span><span class="acordeon-flecha">▶</span></span>' +
+        "</button>" +
+        '<div class="acordeon-cuerpo">' +
+        '<p class="mat-mod-desc">' + esc(m.descripcion) + "</p>" +
+        '<div class="mat-progreso"><div class="mat-progreso-relleno" style="width:' + pct + '%"></div></div>' +
+        body +
+        "</div></div>";
+    }
+
+    cont.innerHTML = mods.map(pintarModulo).join("");
+
+    function actualizarTotales() {
+      $$("#materiales-contenido .mat-modulo").forEach(function (mod) {
+        var mid = mod.getAttribute("data-modulo");
+        var m = null;
+        for (var i = 0; i < mods.length; i++) { if (mods[i].id === mid) { m = mods[i]; break; } }
+        if (!m) return;
+        var n = (m.items || []).length;
+        var c = (m.items || []).filter(function (it) { return !!marcados[it.id]; }).length;
+        var p = n ? Math.round(100 * c / n) : 0;
+        mod.classList.toggle("completo", p === 100);
+        var contEl = mod.querySelector(".mat-mod-cont"); if (contEl) contEl.textContent = c + " / " + n;
+        var pctEl = mod.querySelector(".mat-mod-pct"); if (pctEl) pctEl.textContent = p + "%";
+        var barra = mod.querySelector(".mat-progreso-relleno"); if (barra) barra.style.width = p + "%";
+        Array.prototype.slice.call(mod.querySelectorAll(".mat-item")).forEach(function (row) {
+          var cb = row.querySelector("input[data-item]");
+          if (cb) row.classList.toggle("marcado", !!marcados[cb.getAttribute("data-item")]);
+        });
+      });
+    }
+
+    cont.addEventListener("change", function (ev) {
+      var cb = ev.target.closest("input[data-item]");
+      if (!cb) return;
+      var id = cb.getAttribute("data-item");
+      if (cb.checked) marcados[id] = true; else delete marcados[id];
+      materialesGuardar(marcados);
+      actualizarTotales();
+    });
+
+    cont.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-acordeon]");
+      if (b) b.parentElement.classList.toggle("abierto");
+    });
+
+    $("#mat-expandir").addEventListener("click", function () {
+      $$("#materiales-contenido .mat-modulo").forEach(function (m) { m.classList.add("abierto"); });
+    });
+    $("#mat-contraer").addEventListener("click", function () {
+      $$("#materiales-contenido .mat-modulo").forEach(function (m) { m.classList.remove("abierto"); });
+    });
+    $("#mat-restablecer").addEventListener("click", function () {
+      marcados = {};
+      materialesGuardar(marcados);
+      $$("#materiales-contenido input[data-item]").forEach(function (cb) { cb.checked = false; });
+      actualizarTotales();
+    });
+  }
+
+  /* ================= RESPONSABLES (gobernanza) ================= */
+  function renderResponsablesPage() {
+    var gob = D.gobernanza;
+    var cont = $("#responsables-contenido");
+    if (!cont || !gob) return;
+
+    function lista(titulo, items) {
+      if (!items || !items.length) return "";
+      return "<h5>" + esc(titulo) + "</h5><ul>" +
+        items.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+    }
+
+    var est = gob.estructura || {};
+    var html = '<div class="resp-bloque">' +
+      "<h3>" + esc(est.titulo || "Estructura de responsabilidades") + "</h3>" +
+      '<div class="estructura">' +
+      (est.niveles || []).map(function (n, i) {
+        var miembros = n.miembros.map(function (m) {
+          return '<span class="estructura-chip">' +
+            (m.nombre ? "<strong>" + esc(m.nombre) + "</strong> · " : "") + esc(m.cargo) + "</span>";
+        }).join("");
+        var flecha = i < (est.niveles || []).length - 1 ? '<div class="estructura-flecha">↓</div>' : "";
+        return '<div class="estructura-nivel"><div class="estructura-nivel-titulo">' + esc(n.nivel) + "</div>" +
+          '<div class="estructura-miembros">' + miembros + "</div></div>" + flecha;
+      }).join("") +
+      (est.apoyo ? '<div class="estructura-apoyo"><div class="estructura-nivel-titulo">' + esc(est.apoyo.titulo) + "</div>" +
+        '<div class="estructura-miembros">' + est.apoyo.miembros.map(function (m) {
+          return '<span class="estructura-chip apoyo">' +
+            (m.nombre ? "<strong>" + esc(m.nombre) + "</strong> · " : "") + esc(m.cargo) + "</span>";
+        }).join("") + "</div></div>" : "") +
+      "</div></div>";
+
+    html += '<div class="resp-bloque"><h3>Perfiles y funciones</h3><div class="roles-lista">' +
+      (gob.roles || []).map(function (r) {
+        var entregables = (r.entregables && r.entregables.length)
+          ? "<ul>" + r.entregables.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul>"
+          : '<p class="nota">—</p>';
+        var comunica = (r.comunica_con && r.comunica_con.length)
+          ? r.comunica_con.map(function (c) { return '<span class="rol-chip">' + esc(c) + "</span>"; }).join("")
+          : '<span class="nota">—</span>';
+        return '<div class="acordeon rol-card">' +
+          '<button class="acordeon-cabecera rol-cabecera" type="button" data-acordeon>' +
+          '<span class="rol-icono">' + esc(r.icono) + "</span>" +
+          '<span class="rol-titulos">' +
+          '<span class="rol-cargo">' + esc(r.cargo) + "</span>" +
+          (r.nombre ? '<span class="rol-nombre">' + esc(r.nombre) + "</span>" : "") +
+          '<span class="rol-resumen">' + esc(r.resumen) + "</span>" +
+          "</span>" +
+          '<span class="acordeon-flecha">▶</span>' +
+          "</button>" +
+          '<div class="acordeon-cuerpo">' +
+          '<div class="rol-meta">' +
+          "<div><strong>Rol</strong><br>" + esc(r.rol) + "</div>" +
+          "<div><strong>Reporta a</strong><br>" + esc(r.reporta_a) + "</div>" +
+          "<div><strong>Organización</strong><br>" + esc(r.organizacion || "—") + "</div>" +
+          "</div>" +
+          lista("Responsabilidades", r.responsabilidades) +
+          "<h5>Entregables</h5>" + entregables +
+          "<h5>Comunica con</h5><div class='rol-chips'>" + comunica + "</div>" +
+          '<div class="rol-limite"><strong>Límites y alcance:</strong> ' + esc(r.limite) + "</div>" +
+          "</div></div>";
+      }).join("") + "</div></div>";
+
+    // Equipos de trabajo
+    var et = gob.equipos_trabajo || {};
+    html += '<div class="resp-bloque"><h3>' + esc(et.titulo || "Equipos de trabajo") + "</h3>" +
+      (et.intro ? '<p class="seccion-intro">' + esc(et.intro) + "</p>" : "") +
+      '<div class="equipos-trabajo">' +
+      (et.equipos || []).map(function (e) {
+        var resumen = (e.responsabilidades && e.responsabilidades.length) ? e.responsabilidades[0] : "";
+        return '<div class="acordeon rol-card eq-card">' +
+          '<button class="acordeon-cabecera rol-cabecera" type="button" data-acordeon>' +
+          '<span class="rol-icono">' + esc(e.icono) + "</span>" +
+          '<span class="rol-titulos">' +
+          '<span class="rol-cargo">' + esc(e.nombre) + "</span>" +
+          '<span class="rol-resumen">' + esc(resumen) + "</span>" +
+          "</span>" +
+          '<span class="acordeon-flecha">▶</span>' +
+          "</button>" +
+          '<div class="acordeon-cuerpo">' +
+          lista("Responsabilidades", e.responsabilidades) +
+          lista("Actividades principales", e.actividades) +
+          lista("Entregables", e.entregables) +
+          lista("Dependencias y colaboración", e.dependencias) +
+          lista("Perfil recomendado del líder", e.perfil_lider) +
+          (e.nota ? '<div class="eq-nota">' + esc(e.nota) + "</div>" : "") +
+          "</div></div>";
+      }).join("") +
+      "</div>" +
+      (et.nota ? '<p class="nota">' + esc(et.nota) + "</p>" : "") +
+      "</div>";
+
+    if (et.relaciones && et.relaciones.length) {
+      html += '<div class="resp-bloque"><h3>' + esc(et.relaciones_titulo || "Relaciones y colaboración principal") + "</h3>" +
+        '<div class="relaciones">' + et.relaciones.map(function (r) {
+          return '<div class="relacion">' +
+            '<span class="relacion-de">' + esc(r.de) + "</span>" +
+            '<span class="relacion-flecha">→</span>' +
+            '<span class="relacion-a">' + esc(r.a) + "</span>" +
+            '<span class="relacion-tipo">' + esc(r.tipo) + "</span>" +
+            "</div>";
+        }).join("") + "</div>" +
+        (et.relaciones_nota ? '<p class="nota">' + esc(et.relaciones_nota) + "</p>" : "") +
+        "</div>";
+    }
+
+    var pl = gob.perfil_lider || {};
+    html += '<div class="resp-bloque"><h3>' + esc(pl.titulo || "Perfil del líder de equipo") + "</h3>" +
+      (pl.descripcion ? '<p class="seccion-intro">' + esc(pl.descripcion) + "</p>" : "") +
+      '<div class="perfil-lider">' +
+      '<ul class="perfil-criterios">' + (pl.criterios || []).map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" +
+      '<blockquote class="perfil-frase">' + esc(pl.frase || "") + "</blockquote>" +
+      "</div></div>";
+
+    var re = gob.reglas_equipos || {};
+    html += '<div class="resp-bloque"><h3>' + esc(re.titulo || "Reglas para conformar equipos") + "</h3>" +
+      '<div class="reglas-equipos">' +
+      '<ol class="reglas-lista">' + (re.reglas || []).map(function (r2) { return "<li>" + esc(r2) + "</li>"; }).join("") + "</ol>" +
+      (re.nota ? '<div class="reglas-nota">' + esc(re.nota) + "</div>" : "") +
+      "</div></div>";
+
+    var com = gob.comunicacion || {};
+    html += '<div class="resp-bloque"><h3>' + esc(com.titulo || "Comunicación, reportes y escalamiento") + "</h3>" +
+      '<div class="flujo">' + (com.flujo || []).map(function (f) {
+        return '<div class="flujo-paso">' +
+          '<div class="flujo-caja flujo-de">' + esc(f.de) + "</div>" +
+          '<div class="flujo-flecha">→</div>' +
+          '<div class="flujo-caja flujo-a">' + esc(f.a) + "</div>" +
+          '<div class="flujo-nota">' + esc(f.nota) + "</div>" +
+          "</div>";
+      }).join("") + "</div>" +
+      '<div class="canales-especiales">' + (com.canales_especiales || []).map(function (c) {
+        return '<div class="canal"><strong>' + esc(c.titulo) + ":</strong> " + esc(c.responsable) + "</div>";
+      }).join("") + "</div>" +
+      "<h5>Reglas complementarias</h5>" +
+      '<ul class="com-reglas">' + (com.reglas || []).map(function (r3) { return "<li>" + esc(r3) + "</li>"; }).join("") + "</ul>" +
+      "</div>";
+
+    cont.innerHTML = html;
+
+    cont.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-acordeon]");
+      if (b) b.parentElement.classList.toggle("abierto");
+    });
+  }
+
   /* ================= NAVEGACIÓN ================= */
   function configurarNav() {
     var enlaces = $$(".navegacion a, .navegacion-iconos a");
     var titulos = { home: "Home", edt: "EDT", cronograma: "Cronograma", comunicacion: "Plan de Comunicación",
       riesgos: "Incidentes y Riesgos", acuerdos: "Acuerdos", avances: "Reporte de Avances", cierre: "Cierre de Proyecto",
-      grupos: "Grupos de trabajo", practicas: "Prácticas", diagramas: "Diagramas", biblioteca: "Biblioteca Técnica", glosario: "Glosario" };
+      grupos: "Grupos de trabajo", practicas: "Prácticas", diagramas: "Diagramas", biblioteca: "Biblioteca Técnica", glosario: "Glosario", materiales: "Materiales", responsables: "Responsables" };
     function activar(id) {
       $$(".seccion").forEach(function (s) { s.classList.toggle("activa", s.id === id); });
       enlaces.forEach(function (a) { a.classList.toggle("nav-activo", a.getAttribute("data-seccion") === id); });
@@ -1091,7 +1378,7 @@
     });
     var hash = (window.location.hash || "").replace("#", "");
     var secs = ["home", "edt", "cronograma", "comunicacion", "riesgos", "acuerdos", "avances", "cierre",
-                "grupos", "practicas", "diagramas", "biblioteca", "glosario"];
+                "grupos", "practicas", "diagramas", "biblioteca", "glosario", "materiales", "responsables"];
     activar(secs.indexOf(hash) >= 0 ? hash : "home");
   }
 

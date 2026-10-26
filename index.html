@@ -48,6 +48,7 @@
     <div class="lateral-seccion">Módulos principales</div>
     <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
       <a href="#home" data-seccion="home" title="Home"><span class="ico">🏠</span><span class="txt">Home</span></a>
+      <a href="#responsables" data-seccion="responsables" title="Responsables"><span class="ico">🧭</span><span class="txt">Responsables</span></a>
       <a href="#edt" data-seccion="edt" title="EDT"><span class="ico">🧩</span><span class="txt">EDT</span></a>
       <a href="#cronograma" data-seccion="cronograma" title="Cronograma"><span class="ico">📅</span><span class="txt">Cronograma</span></a>
       <a href="#comunicacion" data-seccion="comunicacion" title="Plan de Comunicación"><span class="ico">💬</span><span class="txt">Plan de Comunicación</span></a>
@@ -64,6 +65,7 @@
       <a href="#diagramas" data-seccion="diagramas" title="Diagramas"><span class="ico">📐</span><span class="txt">Diagramas</span></a>
       <a href="#biblioteca" data-seccion="biblioteca" title="Biblioteca Técnica"><span class="ico">📚</span><span class="txt">Biblioteca Técnica</span></a>
       <a href="#glosario" data-seccion="glosario" title="Glosario"><span class="ico">📖</span><span class="txt">Glosario</span></a>
+      <a href="#materiales" data-seccion="materiales" title="Materiales"><span class="ico">🧰</span><span class="txt">Materiales</span></a>
     </nav>
 
     <div class="lateral-pie">
@@ -136,7 +138,14 @@
         <div class="accesos-rapidos" id="accesos-rapidos"></div>
 
         <h3>Responsables</h3>
-        <div class="grilla-cards" id="responsables"></div>
+        <div class="grilla-cards" id="responsables-home"></div>
+      </section>
+
+      <!-- RESPONSABLES -->
+      <section id="responsables" class="seccion">
+        <h2>Responsables</h2>
+        <p class="seccion-intro">Estructura de responsabilidades, roles, perfil de liderazgo y reglas para conformar equipos del Proyecto AATD DC3.</p>
+        <div id="responsables-contenido"></div>
       </section>
 
       <!-- 2. EDT -->
@@ -261,6 +270,19 @@
         <h2>Glosario</h2>
         <input type="search" id="glosario-busqueda" placeholder="Buscar término…" aria-label="Buscar en el glosario">
         <div class="glosario" id="glosario-lista"></div>
+      </section>
+
+      <!-- MATERIALES -->
+      <section id="materiales" class="seccion">
+        <h2>Materiales</h2>
+        <p class="seccion-intro">Lista de materiales por módulo (M01–M05) con estado, cantidad y verificación. Los valores no confirmados se marcan como «Pendiente de verificar».</p>
+        <div class="materiales-controles">
+          <button class="boton boton-sec" id="mat-expandir" type="button">Expandir todo</button>
+          <button class="boton boton-sec" id="mat-contraer" type="button">Contraer todo</button>
+          <button class="boton boton-sec" id="mat-restablecer" type="button">Restablecer marcas</button>
+        </div>
+        <div class="materiales-leyenda" id="materiales-leyenda"></div>
+        <div id="materiales-contenido"></div>
       </section>
     </main>
 
